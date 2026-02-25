@@ -3854,6 +3854,16 @@ a.lang-btn:active {
     height: calc(100vh - var(--player-expand-top-safe) - 50px);
     max-height: calc(100vh - 95px);
     z-index: 1;
+}
+/* Móvil: panel de sesiones solo hasta la altura del navbar (no más alto) */
+@media (max-width: 767px) {
+    .player-expanded-overlay {
+        --player-expand-top-safe: var(--navbar-height, 72px);
+        height: calc(100vh - var(--navbar-height, 72px) - 56px);
+        max-height: calc(100vh - var(--navbar-height, 72px) - 56px);
+    }
+}
+.player-expanded-overlay {
     overflow: hidden;
     pointer-events: none;
     visibility: hidden;
