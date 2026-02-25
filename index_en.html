@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Desktop view unlocked: full site visible on PC -->
+    <style>
+        html, body { background: #000 !important; margin: 0; min-height: 100vh; }
+        #entry-ritual { position: fixed; inset: 0; z-index: 9999; background: #000 !important; min-height: 100vh; }
+    </style>
+
+    <title>Aether | Deep, Soulful House Music for Bars, Clubs & Boutiques in Barcelona</title>
+
+    <meta name="description"
+        content="Barcelona-based DJ specializing in Deep, Soulful House for bars, boutique venues, intimate clubs and private events. Vinyl & digital sessions with a refined musical curation." />
+
+    <meta name="keywords"
+        content="DJ Barcelona, Deep House, Soulful House, bar DJ, resident DJ, Lounge, House Music, DJ sets, private events Barcelona" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Aether | Deep, Soulful House DJ" />
+    <meta property="og:description"
+        content="Deep, Soulful House DJ, creating elegant atmospheres for bars, clubs and boutique venues." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aether.com/index_en.html" />
+    <meta property="og:image" content="https://aether.com/img/og-cover-1200x630.png" />
+    <meta property="og:image:alt" content="Aether — Deep, Soulful House Music in Barcelona" />
+    <meta property="og:site_name" content="Aether" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aether | Deep, Soulful House Music for Bars, Clubs & Boutiques in Barcelona" />
+    <meta name="twitter:description"
+        content="Deep, Soulful House DJ, creating elegant atmospheres for bars, clubs and boutique spaces." />
+    <meta name="twitter:image" content="https://aether.com/img/og-cover-1200x630.png" />
+
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://aether.com/index_en.html" />
+
+    <!-- Etiquetas Hreflang para SEO Multilingüe -->
+    <link rel="alternate" hreflang="es" href="https://aether.com/" />
+    <link rel="alternate" hreflang="en" href="https://aether.com/index_en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://aether.com/" />
+
+    <!-- Additional SEO -->
+    <meta name="language" content="en" />
+    <meta name="author" content="Aether" />
+
+    <!-- Security -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' https: data: blob:; media-src 'self' https: blob:; frame-src *;" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- PWA / Theme -->
+    <meta name="theme-color" content="#050505" />
+    <meta name="msapplication-TileColor" content="#050505" />
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Favicons (orden: PNG pequeño primero para Safari en pestaña) -->
+    <link rel="shortcut icon" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512x512.png" />
+    <link rel="icon" type="image/svg+xml" href="img/logo-icon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icon-180x180.png">
+
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Aether" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/output.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Aether",
+        "jobTitle": "DJ & Musical Selector",
+        "description": "Barcelona-based DJ specializing in Deep, Soulful House sessions and music curation for bars and clubs.",
+        "url": "https://aether.com/index_en.html",
+        "email": "Aether.oficial@gmail.com",
+        "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Barcelona",
+        "addressCountry": "ES"
+        },
+        "knowsAbout": ["Deep, Soulful House", "Club Management", "Music Curation"]
+    }
+    </script>
+
+    <!-- Performance -->
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+
+    <link rel="preload" href="img/logo.png" as="image" />
+
+    <!-- Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('js/sw.js', { scope: './' }).catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+
+    <!-- Preload solo lo crítico (ritual) para no competir por ancho de banda -->
+    <link rel="preload" as="image" href="img/cosmic_background.webp" fetchpriority="high" />
+
+</head>
+
+<body class="bg-[#050505]  text-brand-text antialiased overflow-x-hidden" style="background:#000!important;min-height:100vh">
+    <!-- Entry ritual — liminal transition (QR / first visit) -->
+    <div id="entry-ritual" role="presentation" aria-live="polite">
+        <div class="ritual-aperture">
+            <div class="ritual-scene">
+                <img class="ritual-bg-img" src="img/cosmic_background.webp" alt="" loading="eager" fetchpriority="high" decoding="async" />
+                <div class="ritual-veil" aria-hidden="true"></div>
+                <div class="ritual-veil-pulse" aria-hidden="true"></div>
+                <div class="ritual-noise" aria-hidden="true"></div>
+                <div class="ritual-particles" aria-hidden="true">
+                    <span class="ritual-particle ritual-particle--1"></span>
+                    <span class="ritual-particle ritual-particle--2"></span>
+                    <span class="ritual-particle ritual-particle--3"></span>
+                    <span class="ritual-particle ritual-particle--4"></span>
+                    <span class="ritual-particle ritual-particle--5"></span>
+                    <span class="ritual-particle ritual-particle--6"></span>
+                    <span class="ritual-particle ritual-particle--7"></span>
+                    <span class="ritual-particle ritual-particle--8"></span>
+                </div>
+            </div>
+            <div class="ritual-center">
+                <div class="ritual-logo-wrap">
+                    <div class="ritual-logo-glow" aria-hidden="true"></div>
+                    <img class="ritual-logo" src="img/logo.png" alt="Aether" />
+                </div>
+                <span class="ritual-word" aria-hidden="true">Aether</span>
+            </div>
+        </div>
+        <div class="ritual-exit-flash" aria-hidden="true"></div>
+    </div>
+
+    <script>
+        (function () {
+            if (sessionStorage.getItem('aether_ritual_done')) {
+                var el = document.getElementById('entry-ritual');
+                if (el) el.remove();
+                document.documentElement.classList.add('styles-loaded');
+                return;
+            }
+
+            var ritual = document.getElementById('entry-ritual');
+            var done = false;
+
+            function enter() {
+                if (done) return;
+                done = true;
+                ritual.classList.add('ritual-exit');
+                setTimeout(function () {
+                    ritual.remove();
+                    document.documentElement.classList.add('styles-loaded');
+                    sessionStorage.setItem('aether_ritual_done', '1');
+                }, 2500);
+            }
+
+            requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                    ritual.classList.add('ritual-phase-reveal');
+                });
+            });
+
+            /* Apertura ~2.8s + logo visible 3s, luego pasar a index */
+            setTimeout(enter, 6000);
+        })();
+    </script>
+
+<!-- FONDO AMBIENTAL (Eco Borroso) -->
+    <div id="ambient-bg" class="fixed inset-0 z-0 pointer-events-none">
+        <!-- La imagen borrosa -->
+        <img src="img/bg_converted.webp" alt="background-galactico"
+            class="w-full h-full object-cover opacity-60 scale-110" loading="eager" decoding="async">
+    
+        <!-- Un velo cálido encima para que el texto se lea bien -->
+        <div class="absolute inset-0 bg-contrast-warm"></div>
+    </div>
+
+    <!-- Skip to main content for accessibility -->
+    <a href="#home"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-accent focus:text-black focus:rounded-3xl focus:font-medium">
+        Skip to main content
+    </a>
+
+
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-[60] transition-all duration-500 py-4 md:py-8" role="navigation"
+        aria-label="Main navigation">
+        <div class="max-w-6xl mx-auto px-4 md:px-6">
+            <div class="flex items-center justify-between">
+            <!-- CAMBIO 1: gap-2 en móvil/tablet, gap-6 en PC (md) -->
+            <div class="flex items-center gap-2 sm:gap-4 md:gap-6">
+    
+                <!-- TU LOGO ORIGINAL -->
+                <a href="#home"
+                    class="flex items-center gap-2 md:gap-3 font-serif text-xl tracking-tight hover:text-white transition-all duration-300 relative group shrink-0"
+                    aria-label="Ir al inicio">
+                    <img src="img/logo.png" alt="Æ Aether Logo"
+                        class="h-7 md:h-7 w-auto opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 object-contain" />
+                    <span class="inline text-glow-hover font-sans uppercase text-[12px] sm:text-xs tracking-[0.45em] text-white">Dj Aether</span>
+                </a>
+    
+                <!-- MINI REPRODUCTOR AMBIENTAL -->
+
+                </div>
+                
+            <!-- MENÚ DE NAVEGACIÓN PRINCIPAL (solo este bloque lleva fondo con esquinas redondeadas al hacer scroll) -->
+                <div class="navbar-links-inner hidden lg:flex flex-1 justify-center" role="list">
+                    <div id="navbar-links-bg" class="navbar-links-bg flex gap-1 xl:gap-2 text-xs uppercase tracking-[0.2em] text-brand-text/70 font-medium">
+                    <a href="#about"
+                        class="hover:text-white transition-all duration-300 relative group px-2 lg:px-4 py-2 rounded-3xl"
+                        role="listitem">
+                        Vision
+                    </a>
+                <a href="#music"
+                    class="hover:text-white transition-all duration-300 relative group px-2 lg:px-4 py-2 rounded-3xl"
+                    role="listitem">
+                    Sessions
+                </a>
+                <a href="#records" class="hover:text-white transition-all duration-300 relative group px-2 lg:px-4 py-2 rounded-3xl"
+                    role="listitem">
+                    Selection
+                </a>
+                <a href="shorts.html" class="hover:text-white transition-all duration-300 relative group px-2 lg:px-4 py-2 rounded-3xl"
+                    role="listitem">
+                    Shorts <!-- O Shorts -->
+                </a>
+                <a href="#contact"
+                    class="hover:text-white transition-all duration-300 relative group px-2 lg:px-4 py-2 rounded-3xl"
+                    role="listitem">
+                    Contact
+                </a>
+                    </div>
+            </div>
+    
+            <!-- 1. DESKTOP GROUP (Visible only on LG or larger) -->
+            <div class="hidden lg:flex items-center gap-4">
+            
+                <!-- Button Book Now -->
+                <a href="https://wa.me/34631244350?text=Hi%20Aether%2C%20I%27d%20like%20to%20check%20availability%20for%20a%20session.%20Can%20we%20chat%3F"
+                    target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-2
+                    px-6 py-2.5
+                    uppercase text-[11px] font-normal tracking-[0.3em]
+                    text-white/90
+                    rounded-3xl
+                    border border-white/20
+                    backdrop-blur-lg
+                    bg-black/20
+                    shadow-lg
+                    transition-all duration-300
+                    hover:text-white
+                    hover:bg-black/30
+                    touch-target"
+                >   
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>Get in touch</span>
+                </a>
+
+                <!-- Desktop Language Selector -->
+                <div class="lang-switch flex items-center gap-1.5 ml-4">
+                    <a href="index.html" class="lang-btn">ES</a>
+                    <span class="lang-btn lang-btn--active" aria-current="true">EN</span>
+                    <button
+                        class="ritual-vu-nav-btn"
+                        data-ritual-vu-trigger
+                        type="button"
+                        aria-label="Open VU ritual"
+                        title="VU Ritual">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M3.5 14.2c2.2-3.8 5.3-5.7 8.6-5.7s6.4 1.9 8.6 5.7" />
+                            <line x1="12.1" y1="14.4" x2="16.6" y2="10.9" />
+                            <circle cx="12.1" cy="14.4" r="1.1" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            
+            <!-- 2. MOBILE & TABLET GROUP (Hidden on LG with 'lg:hidden') -->
+            <div class="lg:hidden flex items-center gap-3">
+                <!-- Mobile Selector -->
+                <div class="lang-switch flex items-center gap-1.5">
+                    <a href="index.html" class="lang-btn">ES</a>
+                    <span class="lang-btn lang-btn--active" aria-current="true">EN</span>
+                    <button
+                        class="ritual-vu-nav-btn ritual-vu-nav-btn--mobile"
+                        data-ritual-vu-trigger
+                        type="button"
+                        aria-label="Open VU ritual"
+                        title="VU Ritual">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M3.5 14.2c2.2-3.8 5.3-5.7 8.6-5.7s6.4 1.9 8.6 5.7" />
+                            <line x1="12.1" y1="14.4" x2="16.6" y2="10.9" />
+                            <circle cx="12.1" cy="14.4" r="1.1" />
+                        </svg>
+                    </button>
+                </div>
+            
+            </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Section index: fuera del fondo negro (logo + idiomas), debajo del navbar -->
+    <nav id="section-index" class="section-index" role="navigation" aria-label="Page sections">
+        <div class="section-index__track max-w-6xl mx-auto px-4 md:px-6">
+            <a href="#home" class="section-index__item" data-section="home" aria-label="Go to Home">
+                <span class="section-index__name">Home</span>
+                <span class="section-index__dot is-active"></span>
+            </a>
+            <a href="#about" class="section-index__item" data-section="about" aria-label="Go to Vision">
+                <span class="section-index__name">Vision</span>
+                <span class="section-index__dot"></span>
+            </a>
+            <a href="#music" class="section-index__item" data-section="music" aria-label="Go to Sessions">
+                <span class="section-index__name">Sessions</span>
+                <span class="section-index__dot"></span>
+            </a>
+            <a href="shorts.html" class="section-index__item" data-section="shorts-teaser" aria-label="Go to Shorts">
+                <span class="section-index__name">Shorts</span>
+                <span class="section-index__dot"></span>
+            </a>
+            <a href="#gigs" class="section-index__item" data-section="gigs" aria-label="Go to Gigs">
+                <span class="section-index__name">Gigs</span>
+                <span class="section-index__dot"></span>
+            </a>
+            <a href="#records" class="section-index__item" data-section="records" aria-label="Go to Selection">
+                <span class="section-index__name">Selection</span>
+                <span class="section-index__dot"></span>
+            </a>
+            <a href="#contact" class="section-index__item" data-section="contact" aria-label="Go to Contact">
+                <span class="section-index__name">Contact</span>
+                <span class="section-index__dot"></span>
+            </a>
+        </div>
+    </nav>
+
+        <div class="site-content">
+
+<div class="home-header-wrapper">
+<header id="home" class="relative flex items-center justify-center overflow-hidden z-10">
+    <div class="absolute inset-0 z-0 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/65 via-brand-accent/5 to-brand-bg z-10">
+        </div>
+        <div class="absolute inset-0 warm-gradient z-10"></div>
+
+        <div class="contrast-final"></div>
+
+        <picture>
+            <!-- 📱 MOBILE -->
+            <source srcset="img/hero-mobile1.webp" media="(max-width: 767px)" />
+
+            <!-- 💻 DESKTOP -->
+            <source srcset="img/1.webp" media="(min-width: 768px)" />
+
+            <img src="img/1.webp" class="w-full h-full object-cover opacity-55 transition-transform duration-1000" loading="eager" fetchpriority="high" decoding="async" alt="" style="filter: brightness(0.9) contrast(1.1);" />
+        </picture>
+        <!-- Efecto cristal sobre la imagen del hero (como placas de secciones) -->
+        <div class="header-hero-glass absolute inset-0 z-[5] pointer-events-none" aria-hidden="true"></div>
+    </div>
+
+    <div class="relative z-20 text-center px-4 md:px-6 max-w-4xl" style="padding-top: 0px;">
+        <section
+            class="flex flex-col items-center justify-center text-center max-w-5xl mx-auto px-4 pt-0 md:pt-0 pb-6 md:pb-0 mt-[-70px] reveal reveal-fast">
+
+            <!-- SEO H1 Updated -->
+            <h1 class="sr-only">
+                Aether DJ Barcelona — Deep, Soulful House for bars, clubs, and boutique spaces
+            </h1>
+
+            <!-- DECORATIVE LINE -->
+            <div class="w-16 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent mx-auto mb-6 animate-fade-in-up"
+                style="animation-delay:0.25s"></div>
+
+            <!-- TAGS -->
+            <p class="uppercase text-[9px] sm:text-[10px] tracking-[0.3em] text-brand-text/80 animate-fade-in-up mb-6 drop-shadow-md font-medium"
+                style="animation-delay:0.3s">
+                Deep • Soulful • Organic House 
+            </p>
+
+<!-- TÍTULO PRINCIPAL -->
+<h2 class="font-serif text-5xl sm:text-6xl md:text-8xl tracking-tight leading-none mb-6 animate-fade-in-up text-white drop-shadow-lg"
+    style="animation-delay:0.2s">
+    A E T H E R
+</h2>
+
+<!-- SUBTÍTULO / RITUAL -->
+<span class="block mb-4 text-[11px] md:text-xs uppercase tracking-[0.3em] text-white/60 animate-fade-in-up"
+    style="animation-delay:0.3s">
+    Listening ritual
+</span>
+
+<!-- DESCRIPCIÓN -->
+<p class="hero-intro-text max-w-md mx-auto text-[15px] md:text-base font-normal md:font-light leading-relaxed animate-fade-in-up px-6 text-pretty drop-shadow-md"
+    style="animation-delay:0.4s">
+    A space where sound slows down time.
+    Deep frequencies, warm textures, and a way of listening that invites presence.
+</p>
+
+
+        </section>
+
+        <!-- LISTEN BUTTON (UPDATED DESIGN) -->
+        <div class="hero-listener-spacer mt-12 flex justify-center animate-fade-in-up" style="animation-delay:0.35s">
+            <a href="#" id="listen-now-btn" aria-label="Listen now" class="inline-flex items-center gap-3 px-6 py-3 rounded-full
+                text-[11px] font-bold uppercase tracking-[0.25em]
+                bg-white/5 hover:bg-white/10
+                text-white
+                border border-white/10 hover:border-white/25
+                backdrop-blur-md
+                shadow-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]
+                transition-all duration-500
+                group">
+
+                <svg class="listen-headphones-icon w-7 h-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.5)] transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+                    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+                </svg>
+        </a>
+        </div>
+    </div>
+
+    <!-- SCROLL ARROW -->
+<div class="absolute left-1/2 -translate-x-1/2 bottom-[120px] md:bottom-8 z-30">
+    <div class="hero-scroll-hint animate-float cursor-pointer p-2 opacity-[0.15] hover:opacity-45 transition-opacity duration-300" aria-label="See more below">
+        <i data-lucide="arrow-down" class="w-5 h-5 text-white/90"></i>
+    </div>
+    </div>
+</div>
+
+</header>
+</div>
+
+    <!-- Empty plaque subscribe-style (formerly About) -->
+    <section id="about" class="py-12 md:py-16 px-4 md:px-6 relative z-10">
+    <div class="subscribe-glass-card about-plaque w-full max-w-2xl md:max-w-4xl mx-auto min-h-[200px] md:min-h-[260px] grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 reveal-left"
+        aria-hidden="true">
+        <div class="md:col-span-7 order-1 md:order-2 space-y-6 md:space-y-8 pl-0 md:pl-12"
+            style="margin: 20px 10px 10px 10px !important;">
+            <div>
+                <span class="text-white uppercase tracking-widest text-xs font-bold mb-2 block">Manifesto</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white leading-tight mobile-text">
+                    The architecture<br><span class="text-white/60">of silence.</span>
+                </h2>
+            </div>
+            <div
+                class="text-brand-text/70 text-[15px] md:text-base leading-relaxed space-y-5 md:space-y-6 font-normal md:font-light mobile-text about-manifiesto">
+                <p>
+                    Beyond momentary euphoria, there is a deeper space.
+                    A place where music does not interrupt, but accompanies.
+                </p>
+
+                <p>
+                    The sessions are shaped as slow journeys, where each selection carries intention and every
+                    transition
+                    allows the moment to breathe.
+                </p>
+
+                <p>
+                    Between the crackle of vinyl and digital precision,
+                    a natural balance emerges.
+                    A pulse that holds the space without imposing itself.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 md:gap-8 pt-4">
+                <div class="border-l-2 border-white/40 pl-4 md:pl-6 card-hover group">
+                    <span
+                        class="block font-serif text-2xl md:text-3xl text-white mb-1 group-hover:text-white transition-colors">Ritual</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-brand-text/70">Analog</span>
+                </div>
+                <div class="border-l-2 border-white/40 pl-4 md:pl-6 card-hover group">
+                    <span
+                        class="block font-serif text-2xl md:text-3xl text-white mb-1 group-hover:text-white transition-colors">117
+                        - 122 BPM</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-brand-text/70">Pulse</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:col-span-5 order-2 md:order-1 relative reveal-left">
+
+            <!-- Portrait aligned with glass panels -->
+            <div
+                class="aspect-[3/4] max-h-[420px] md:max-h-[520px] w-full relative z-10 bg-brand-bg group aether-portrait-container" style="margin-top: 50px">
+                <img src="img/gal-3.webp" alt="Aether DJ Portrait" class="w-full h-full object-cover" loading="lazy">
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section id="contexts" class="relative z-10 px-4 md:px-6 pt-8 md:pt-12 pb-8 scroll-mt-24 reveal-left">
+
+    <div class="max-w-3xl mx-auto text-center">
+
+        <!-- Subtle top line -->
+        <div class="w-16 h-[1px] bg-gradient-to-r from-transparent via-white/25 to-transparent mx-auto mb-10"></div>
+
+        <!-- CONTENT -->
+        <div class="context-blocks-rhythm text-brand-text/70 text-sm md:text-base font-light leading-[1.8]">
+
+            <div class="context-item group relative">
+                <div>
+                    <span class="context-item-title block text-base md:text-lg text-white/90 font-light mb-2 group-hover:text-white/95 transition-colors duration-300">
+                        Bars with a sonic identity
+                    </span>
+                    <span class="block text-white/50 text-xs md:text-sm leading-relaxed group-hover:text-white/60 transition-colors duration-300">
+                        Where music supports conversation.
+                    </span>
+                </div>
+                
+            </div>
+
+            <div class="context-item group relative">
+                <div>
+                    <span class="block text-base md:text-lg text-white/85 font-light tracking-normal mb-2 group-hover:text-white/95 transition-colors duration-300">
+                        Night terraces
+                    </span>
+                    <span class="block text-white/50 text-xs md:text-sm leading-relaxed group-hover:text-white/60 transition-colors duration-300">
+                        Organic rhythms, mindful volume.
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="context-item group relative">
+                <div>
+                    <span class="context-item-title block text-base md:text-lg text-white/90 font-light mb-2 group-hover:text-white/95 transition-colors duration-300">
+                        Listening rooms
+                    </span>
+                    <span class="block text-white/50 text-xs md:text-sm leading-relaxed group-hover:text-white/60 transition-colors duration-300">
+                        Warm-up and closing as a journey.
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="context-item group relative">
+                <div>
+                    <span class="context-item-title block text-base md:text-lg text-white/90 font-light mb-2 group-hover:text-white/95 transition-colors duration-300">
+                        Private events
+                    </span>
+                    <span class="block text-white/50 text-xs md:text-sm leading-relaxed group-hover:text-white/60 transition-colors duration-300">
+                        Receptive openness, sustained atmosphere.
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom line -->
+        <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-white/15 to-transparent mx-auto mt-12"></div>
+
+        <!-- Micro-signature -->
+    <p class="text-[10px] uppercase tracking-[0.35em] text-white/30 text-center mt-16 md:mt-20 mb-10 md:mb-14">
+        Barcelona · conscious listening · spaces with identity
+    </p>
+
+    </div>
+</section>
+
+
+<section id="music" class="music-section overflow-x-hidden pt-6 md:pt-16 pb-6 md:pb-24 px-4 md:px-6 scroll-mt-32 border-t-[1px] border-white/5 relative z-10 reveal-right">
+
+
+    <div class="absolute inset-0 warm-gradient opacity-20 pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto relative z-10 px-4 sm:px-6">
+
+        <!-- Section header -->
+<div class="text-center music-header pt-8 md:pt-12 pb-2 mb-8 md:mb-20 px-2 sm:px-0">
+
+    <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl tracking-tight text-white/90">
+        Sessions
+    </h2>
+
+    <p class="mt-6 md:mt-8 mb-0 max-w-xl mx-auto font-light text-sm md:text-base text-white/70">
+        A collection designed for deep listening.
+    </p>
+
+    <p class="mt-5 md:mt-6 mb-0 max-w-2xl mx-auto font-light text-xs md:text-sm text-white/50 leading-relaxed">
+        Sessions built as journeys, where rhythm, texture and space
+        matter as much as melody.
+    </p>
+
+    <p id="listen-anchor" class="listen-hint text-white/28 mt-6 md:mt-8 mb-6 text-[10px] uppercase tracking-[0.32em]">
+        Headphones recommended
+    </p>
+
+</div>
+
+<!-- Sessions list (click to play; session cards in player panel) -->
+<div class="relative w-full rounded-3xl overflow-x-hidden sets-image-bg sessions-plaque py-0" style="min-height: 0;">
+    <div class="sessions-plaque-bg" aria-hidden="true"></div>
+    <div class="sessions-plaque-inner relative w-full max-w-[100vw] py-0">
+        <div class="sessions-list-wrap">
+            <div id="sessions-list" class="sessions-list" role="list" aria-label="Sessions list">
+                <!-- Filled by JavaScript -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- External links -->
+        <div class="music-links pt-6 md:pt-10 text-center">
+            <p class="text-brand-text/80 text-sm mb-4">Listen more on:</p>
+            <div class="flex justify-center gap-6">
+                <a href="https://open.spotify.com/playlist/37i9dQZF1E4x4ZHTG9uviD?si=CGP5_go_T3aLpGTA1gj8cQ" target="_blank"
+                    class="flex items-center gap-2 text-sm hover:text-white transition-all hover:scale-105">
+                    <i data-lucide="music" class="w-4 h-4"></i> Spotify
+                </a>
+                <a href="https://soundcloud.com/abrammisha?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank"
+                    class="flex items-center gap-2 text-sm hover:text-white transition-all hover:scale-105">
+                    <i data-lucide="cloud" class="w-4 h-4"></i> SoundCloud
+                </a>
+                <a href="https://www.mixcloud.com/aether_msh/" target="_blank"
+                    class="flex items-center gap-2 text-sm hover:text-white transition-all hover:scale-105">
+                    <i data-lucide="radio" class="w-4 h-4"></i> Mixcloud
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio-player" preload="none"></audio>
+</section>
+
+<section id="shorts-teaser" class="reveal-left scroll-mt-20 py-20 md:py-28 px-4 md:px-6 relative z-10 border-t border-white/5">
+    <div class="shorts-card-container">
+
+        <a href="shorts.html" class="shorts-card">
+
+            <!-- Mini-preview visual: frame borroso detrás -->
+            <div class="shorts-preview-bg" aria-hidden="true">
+                <div class="shorts-preview-blur"></div>
+                <div class="shorts-preview-gradient"></div>
+            </div>
+
+            <!-- Thumbnail pequeño flotante -->
+            <div class="shorts-thumbnail" aria-hidden="true">
+                <div class="shorts-thumbnail-inner">
+                    <div class="shorts-thumbnail-play-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shorts-info">
+                <div>
+                    <div class="shorts-title-wrapper">
+                        <h3 class="shorts-title">Shorts</h3>
+                        <!-- Badge de actividad -->
+                        <span class="shorts-badge-new">New</span>
+                    </div>
+                    <p class="shorts-subtitle">Vertical essence</p>
+                </div>
+            </div>
+
+            <div class="shorts-btn-minimal">
+                <span>Explore</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                </svg>
+            </div>
+
+        </a>
+
+    </div>
+</section>
+
+<!-- GIGS CALENDAR SECTION -->
+<section id="gigs" class="reveal-right scroll-mt-20 py-20 md:py-28 px-4 md:px-6 relative z-10 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+        
+        <!-- Header -->
+        <div class="text-center mb-12 reveal-left">
+            <div class="w-16 h-[1px] bg-gradient-to-r from-transparent via-white/25 to-transparent mx-auto mb-6"></div>
+            <h2 class="font-serif text-2xl md:text-3xl text-white tracking-tight mb-4">
+                Upcoming gigs
+            </h2>
+            <p class="text-brand-text/50 text-[10px] uppercase tracking-[0.25em] font-medium">
+                Sonic encounters
+            </p>
+        </div>
+
+        <!-- No dates yet: elegant placeholder -->
+        <div class="gigs-empty gigs-list">
+            <div class="gig-card gig-card--empty">
+                <p class="gig-empty-title font-serif text-xl md:text-2xl text-white/90 mb-2">Coming soon</p>
+                <p class="gig-empty-text text-brand-text/60 text-sm md:text-base font-light leading-relaxed max-w-md mx-auto mb-6">
+                    Upcoming dates will be announced here. If you’d like to book a set or propose an event, get in touch.
+                </p>
+                <a href="#contact" class="gig-btn">Contact</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- RECORD BAG (Diseño Redondeado + Botones Juno/Discogs) -->
+<section id="records"
+    class="scroll-mt-[120px] py-16 md:py-24 px-4 md:px-6 border-t border-white/5 relative z-10 bg-black/20">
+
+    <div class="max-w-4xl mx-auto">
+
+        <!-- Header -->
+        <div class="text-center mb-10 reveal-left">
+            <h2 class="records-section-title font-serif text-2xl md:text-3xl text-white tracking-tight mb-4">
+                Vinyl Selection
+            </h2>
+
+            <p class="text-brand-text/50 text-[10px] uppercase tracking-[0.25em] font-medium mb-6">
+                Analog discoveries
+            </p>
+
+            <div class="text-brand-text/60 text-sm leading-relaxed max-w-lg mx-auto font-light space-y-3">
+                <p class="mb-0">Sound in its purest form.</p>
+                <p class="mb-0">Analog textures, deep grooves, and essential cuts. A monthly immersion into the physical format.</p>
+            </div>
+        </div>
+
+        <!-- CARRUSEL DE DISCOS (misma placa y padding que Sessions) -->
+
+        <div class="w-full relative group">
+            <div class="relative w-full rounded-3xl overflow-hidden transition-all duration-500 sets-image-bg py-4 md:py-6">
+                <div class="records-plaque-bg" aria-hidden="true"></div>
+                <div class="relative w-full max-w-full py-2 md:py-4">
+            <p class="records-placa-hint records-placa-hint-es">Gira</p>
+            <p class="records-placa-hint records-placa-hint-en">Spin</p>
+            <div id="records-carousel" class="records-carousel flex flex-nowrap gap-4 md:gap-8 overflow-x-auto px-8 pb-6 pt-2 no-scrollbar items-center snap-x snap-mandatory" style="-webkit-overflow-scrolling: touch; scroll-behavior: smooth;">
+                <!-- DISCO 1 -->
+                <div class="records-carousel__item">
+            <div class="group relative w-full disco-item-pc records-disco-inner"
+                onclick="toggleVinyl(this)">
+                <div class="absolute inset-0 w-full h-full overflow-hidden border border-white/10 shadow-lg">
+
+                    <img src="img/pink_floyd_prism.webp"
+                        alt="Vinyl by Pink Floyd. The Dark Side Of The Moon" class="w-full h-full object-cover transition-transform duration-700" loading="lazy" decoding="async">
+
+                    <div class="record-overlay absolute inset-0 left-0 w-full h-full flex items-center justify-center z-20">
+                        <div class="flex flex-col gap-3 w-full record-overlay__actions">
+                            <a href="https://es.juno.co.uk/products/pink-floyd-the-dark-side-of-the-moon-vinyl/1072642-01/"
+                                target="_blank" onclick="event.stopPropagation()"
+                                class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
+                                Juno
+                            </a>
+
+                            <a href="https://www.discogs.com/ru/master/10362-Pink-Floyd-The-Dark-Side-Of-The-Moon"
+                                target="_blank" onclick="event.stopPropagation()"
+                                class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
+                                Discogs
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="records-disc-caption">
+                <p class="text-[9px] text-brand-accent uppercase tracking-widest font-bold mb-0.5">Pink Floyd</p>
+                <p class="text-white font-serif text-sm leading-tight">The Dark Side Of The Moon</p>
+            </div>
+                </div>
+
+                <!-- DISCO 2 -->
+                <div class="records-carousel__item">
+            <div class="group relative w-full disco-item-pc records-disco-inner"
+                onclick="toggleVinyl(this)">
+                <div class="absolute inset-0 w-full h-full overflow-hidden border border-white/10 shadow-lg">
+
+                    <img src="img/image2.webp"
+                        alt="Vinyl by Mark De Clive-Lowe. Past Present (Tone Poems Across Time)" class="w-full h-full object-cover transition-transform duration-700" loading="lazy" decoding="async">
+
+                    <div class="record-overlay absolute inset-0 left-0 w-full h-full flex items-center justify-center z-20">
+                        <div class="flex flex-col gap-3 w-full record-overlay__actions">
+                            <a href="https://www.junodownload.com/products/mark-de-clive-past-present-tone-poems-across/6943956-02/?srsltid=AfmBOorHHS7qohpOROQhU8IdFdhQe8G8gf003coCDAo010vcP4E4s-Ra"
+                                target="_blank" onclick="event.stopPropagation()"
+                                class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
+                                Juno
+                            </a>
+
+                            <a href="https://www.discogs.com/ru/master/3829002-Mark-De-Clive-Lowe-Past-Present-Tone-Poems-Across-Time"
+                                target="_blank" onclick="event.stopPropagation()"
+                                class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
+                                Discogs
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="records-disc-caption">
+                <p class="text-[9px] text-brand-accent uppercase tracking-widest font-bold mb-0.5">Mark De Clive-Lowe</p>
+                <p class="text-white font-serif text-sm leading-tight">Past Present (Tone Poems Across Time)</p>
+            </div>
+                </div>
+
+                <!-- DISCO 3 -->
+                <div class="records-carousel__item">
+            <div class="group relative w-full disco-item-pc records-disco-inner"
+                onclick="toggleVinyl(this)">
+                <div class="absolute inset-0 w-full h-full overflow-hidden border border-white/10 shadow-lg">
+
+                    <img src="img/vinyl_label.webp"
+                        alt="Joaquin Joe Claussell – Raw Tones vinyl" class="w-full h-full object-cover transition-transform duration-700" loading="lazy" decoding="async">
+
+                    <!-- OVERLAY (estilo glass cálido en CSS) -->
+                    <div class="record-overlay absolute inset-0 left-0 w-full h-full flex items-center justify-center z-20">
+
+                        <div class="flex flex-col gap-3 w-full record-overlay__actions">
+                            <!-- AÑADIDO: onclick="event.stopPropagation()" para que el enlace funcione sin cerrar el disco -->
+                            <a href="https://www.junodownload.com/products/joaquin-joe-claussell-raw-tones/5116424-02/?srsltid=AfmBOop8qmMshTep6jJIihzah-3xkXKqaELOghLE4HCzldY4Vll2uKnA"
+                                target="_blank" onclick="event.stopPropagation()"
+                                class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
+                                Juno
+                            </a>
+
+                            <a href="https://www.discogs.com/ru/release/19098088-Joaquin-Joe-Claussell-Raw-Tones"
+                                target="_blank" onclick="event.stopPropagation()"
+                                class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
+                                Discogs
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="records-disc-caption">
+                <p class="text-[9px] text-brand-accent uppercase tracking-widest font-bold mb-0.5">Joe Claussell</p>
+                <p class="text-white font-serif text-sm leading-tight">Raw Tones</p>
+            </div>
+                </div>
+
+                <!-- DISCO 4 -->
+                <div class="records-carousel__item">
+            <div class="group relative w-full disco-item-pc records-disco-inner"
+                onclick="toggleVinyl(this)">
+                <div class="absolute inset-0 w-full h-full overflow-hidden border border-white/10 shadow-lg">
+
+                    <img src="img/musclecars_cover.webp"
+                        alt="Musclecars – Street Dreams vinyl" class="w-full h-full object-cover transition-transform duration-700 opacity-80" loading="lazy">
+
+                    <div class="record-overlay absolute inset-0 left-0 w-full h-full flex items-center justify-center backdrop-blur-md z-20"
+                        style="background-color: rgba(5, 5, 5, 0.85);">
+                        <div class="flex flex-col gap-3 w-full" style="padding-left: 25px; padding-right: 25px;">
+                            <a href="https://www.junodownload.com/products/musclecars-street-dreams/4667925-02/?srsltid=AfmBOopoDKe0y1RG5BAgHnkQVqWMDEyEsTpJ80y_0M08rSa9Vut7Wz55"
+                                target="_blank" onclick="event.stopPropagation()"
+                                class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
+                                Juno
+                            </a>
+
+                            <a href="https://www.discogs.com/ru/master/2923954-Musclecars-Street-Dreams?srsltid=AfmBOoqajyDxzGeHeFzGd5EIq2Mhf6ndqQh6WAt07AiK3zQ76MbSB-Hw"
+                                target="_blank" onclick="event.stopPropagation()"
+                                class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
+                                Discogs
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="records-disc-caption">
+                <p class="text-[9px] text-brand-accent uppercase tracking-widest font-bold mb-0.5">Musclecars</p>
+                <p class="text-white font-serif text-sm leading-tight">Street Dreams</p>
+            </div>
+                </div>
+
+                <!-- DISCO 5 -->
+                <div class="records-carousel__item">
+            <div class="group relative w-full disco-item-pc records-disco-inner"
+                onclick="toggleVinyl(this)">
+                <div class="absolute inset-0 w-full h-full overflow-hidden border border-white/10 shadow-lg">
+
+                    <img src="img/joan_bibiloni_born.webp"
+                        alt="Joan Bibiloni – Born vinyl" class="w-full h-full object-cover transition-transform duration-700" loading="lazy" decoding="async">
+
+                    <div class="record-overlay absolute inset-0 left-0 w-full h-full flex items-center justify-center z-20">
+                        <div class="flex flex-col gap-3 w-full record-overlay__actions">
+                            <a href="https://es.juno.co.uk/artists/Joan+Bibiloni/" target="_blank"
+                                onclick="event.stopPropagation()"
+                                class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
+                                Juno
+                            </a>
+
+                            <a href="https://www.discogs.com/ru/release/2660007-Joan-Bibiloni-Born?srsltid=AfmBOoqYhh1ivfdu87ETVn2AafoGcwO7pG1FA0Cm21LqeKSeY1etjEyP"
+                                target="_blank" onclick="event.stopPropagation()"
+                                class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
+                                Discogs
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="records-disc-caption">
+                <p class="text-[9px] text-brand-accent uppercase tracking-widest font-bold mb-0.5">Joan Bibiloni</p>
+                <p class="text-white font-serif text-sm leading-tight">Born</p>
+            </div>
+                </div>
+
+
+                <!-- DISCO 6 (Coming soon) -->
+                <div class="records-carousel__item">
+            <div class="group relative w-full disco-item-pc records-disco-inner">
+            <div class="absolute inset-0 w-full h-full overflow-hidden border border-white/15 bg-white/5
+                   flex items-center justify-center rounded-3xl shadow-lg backdrop-blur-sm
+                   transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/25">
+        
+                <!-- Decorative glow -->
+                <div class="absolute inset-0 opacity-20 pointer-events-none"
+                    style="background: radial-gradient(60% 40% at 50% 10%, rgba(255,190,90,.25), transparent);">
+                </div>
+        
+                <!-- Content -->
+                <div class="relative text-center text-white">
+                    <div class="w-12 h-12 rounded-full border border-white/25 flex items-center justify-center mx-auto mb-3
+                       shadow-inner group-hover:scale-110 transition-transform duration-300">
+                        <div class="w-2.5 h-2.5 rounded-full bg-white/70 animate-pulse"></div>
+                    </div>
+        
+                    <span class="block text-[9px] uppercase tracking-[0.25em] text-white/80">
+                        Next month
+                    </span>
+        
+                    <span class="block mt-1 text-[10px] text-white/50 font-light tracking-wide">
+                        In progress
+                    </span>
+                </div>
+            </div>
+        </div>
+            <div class="records-disc-caption">
+                <p class="text-[9px] text-brand-accent uppercase tracking-widest font-bold mb-0.5">—</p>
+                <p class="text-white/60 font-serif text-sm leading-tight">Coming soon</p>
+            </div>
+                </div>
+
+            </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION FOOTER TEXT -->
+        <div class="mt-16 md:mt-20 text-center max-w-lg mx-auto">
+            <p class="text-brand-text/60 text-sm leading-relaxed mx-auto font-light" style="margin-top: 30px;">
+                This selection does not follow trends.
+                It follows resonance.
+                Music shaped for the body, the space,
+                and shared time.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ========================================== -->
+<!-- SECCIÓN SUSCRIPCIÓN (ESTILO WARM GLASS) -->
+<!-- ========================================== -->
+<section id="subscribe" class="pt-12 pb-16 px-4 md:px-6 relative z-10 border-t border-white/5 scroll-mt-20">
+
+<!-- Subtle atmospheric background -->
+<div class="absolute inset-0 warm-gradient opacity-10 pointer-events-none"></div>
+
+<!-- GLASS CARD STARTS HERE -->
+<div class="subscribe-glass-card reveal-left relative z-20">
+
+    <!-- Header (inside the card) -->
+    <div class="text-center mb-10">
+        <span class="text-brand-accent uppercase tracking-[0.3em] text-[10px] font-bold mb-4 block opacity-80">
+            Inner Circle
+        </span>
+        <h3 class="font-serif text-3xl md:text-4xl text-white mb-4 drop-shadow-lg">
+            Join the frequency
+        </h3>
+        <p class="text-brand-text/60 text-sm font-light leading-relaxed max-w-sm mx-auto">
+            Direct alerts for new sets and vinyl releases.<br>
+            No noise, only essence.
+        </p>
+    </div>
+
+    <!-- FORM LOGIC CONTAINER -->
+    <div class="relative w-full">
+
+        <!-- 1. FORM -->
+        <form id="aether-form" action="https://formspree.io/f/mwvlnnzr" method="POST"
+            onsubmit="return handleAetherSubmit(event)"
+            class="flex flex-col sm:flex-row gap-4 relative z-30 transition-all duration-500">
+
+            <!-- Input -->
+            <input type="email" name="email" placeholder="your@email.com" required autocomplete="email"
+                class="glass-input w-full px-6 py-4 text-xs tracking-widest transition-all duration-500 placeholder:text-white/30">
+
+            <!-- Button -->
+            <button type="submit" id="aether-btn" class="
+                relative overflow-hidden shrink-0
+                px-6 py-4 sm:px-10 sm:py-4 rounded-full
+                text-[10px] font-semibold uppercase
+                text-brand-accent
+                bg-white/5 backdrop-blur-md
+                border border-brand-accent/30
+                transition-all duration-500 ease-out
+                hover:bg-brand-accent/10
+                hover:border-brand-accent/60
+                hover:shadow-[0_0_20px_rgba(204,136,0,0.2)]
+                hover:scale-[1.02]
+                active:scale-[0.98]
+                whitespace-nowrap cursor-pointer
+            " style="letter-spacing: 2px;">
+                Follow
+            </button>
+        </form>
+
+        <!-- 2. SUCCESS MESSAGE -->
+        <div id="aether-success" class="hidden w-full flex-col items-center justify-center py-6 animate-fade-in-up"
+            style="display: none;">
+
+            <div class="flex items-center gap-3 text-brand-accent mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span class="uppercase tracking-[0.25em] text-[10px] font-bold text-[#cc8800]">
+                    Confirmed
+                </span>
+            </div>
+            <p class="text-white/70 text-xs font-light tracking-wide text-center max-w-xs mx-auto">
+                Welcome to the inner circle. We'll share news, exclusive content, and updates on new releases with you by email.
+            </p>
+        </div>
+
+        <!-- 3. ERROR MESSAGE -->
+        <div id="aether-error" class="hidden w-full text-center py-4 text-red-400 text-xs tracking-widest"
+            style="display: none;">
+            Connection error. Please try again.
+        </div>
+
+    </div>
+</div>
+<!-- END GLASS CARD -->
+
+    <!-- SCRIPT (Mismo que tenías, no hace falta tocarlo pero lo incluyo por seguridad) -->
+    <script>
+        function handleAetherSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('aether-form');
+            const btn = document.getElementById('aether-btn');
+            const success = document.getElementById('aether-success');
+            const error = document.getElementById('aether-error');
+
+            const oldText = btn.innerHTML;
+            btn.innerHTML = '<span style="opacity:0.7">...</span>';
+            btn.style.pointerEvents = 'none';
+
+            const data = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    form.style.opacity = '0';
+                    setTimeout(() => {
+                        form.style.display = 'none';
+                        success.style.display = 'flex';
+                        success.classList.remove('hidden');
+                    }, 500);
+                    form.reset();
+                } else {
+                    throw new Error('Server Error');
+                }
+            }).catch(err => {
+                console.error(err);
+                form.style.display = 'none';
+                error.style.display = 'block';
+                error.classList.remove('hidden');
+
+                setTimeout(() => {
+                    error.style.display = 'none';
+                    form.style.display = 'flex';
+                    form.style.opacity = '1';
+                    btn.innerHTML = oldText;
+                    btn.style.pointerEvents = 'auto';
+                }, 3000);
+            });
+            return false;
+        }
+    </script>
+</section>
+
+
+
+    <!-- FOOTER -->
+    <footer id="contact" class="border-t border-white/5 py-16 md:py-20 bg-transparent relative z-10;">
+    
+        <!-- Background -->
+        <div class="absolute inset-0 warm-gradient opacity-30"></div>
+    
+        <div class="max-w-4xl mx-auto text-center px-4 md:px-6 relative z-10;">
+
+            <div class="record-shelf-card  reveal-right" style="margin-bottom: 30px;">
+
+            <h3 class="font-serif text-3xl md:text-4xl mb-3 text-white text-glow-hover mobile-text">
+                Book Your Event
+            </h3>
+    
+            <p class="text-brand-text/90 mb-10 md:mb-14 font-normal text-sm md:text-base mobile-text contact-intro-subtitle">
+                Open to proposals that resonate.
+            </p>
+    
+            <!-- Contact buttons (scale controlled in CSS to prevent jump when scrolled to bottom) -->
+            <div class="mb-8 md:mb-12 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto pb-4">
+    
+                <!-- Direct message (primary) -->
+                <a href="https://wa.me/34631244350?text=Hi%20Aether%2C%20I%27d%20like%20to%20check%20availability%20for%20a%20session.%20Can%20we%20chat%3F"
+                    target="_blank" rel="noopener noreferrer" class="contact-cta-btn contact-cta-btn-primary inline-flex flex-col items-center justify-center gap-3
+                        text-white transition-all duration-300
+                        border border-white/20 hover:border-white/30
+                        bg-white/15 hover:bg-white/20
+                        backdrop-blur-md px-6 py-4 rounded-3xl
+                        touch-target font-medium shadow-lg
+                        hover:shadow-[0_0_30px_rgba(230,160,32,0.5)]
+                        active:scale-95">
+    
+                    <i data-lucide="message-circle" class="w-6 h-6 md:w-7 md:h-7"></i>
+                    <span class="text-sm md:text-base text-center">
+                    Get in touch
+                    </span>
+                </a>
+    
+                <!-- Email (secondary) -->
+                <a href="mailto:Aether.oficial@gmail.com?subject=Booking%20Request" class="contact-cta-btn inline-flex flex-col items-center justify-center gap-3
+                        text-white transition-all duration-300
+                        border border-white/20 hover:border-white/30
+                        bg-white/10 hover:bg-white/15
+                        backdrop-blur-md px-6 py-4 rounded-3xl
+                        touch-target font-medium shadow-lg
+                        hover:shadow-[0_0_30px_rgba(230,160,32,0.5)]
+                        active:scale-95">
+    
+                    <i data-lucide="mail" class="w-6 h-6 md:w-7 md:h-7"></i>
+                    <span class="text-sm md:text-base text-center">
+                        Email
+                    </span>
+                </a>
+    </div>
+            </div>
+    
+            <!-- Social links -->
+            <div class="flex justify-center gap-6 md:gap-8 mb-8 md:mb-12">
+    
+                <a href="https://www.instagram.com/aether_msh?igsh=d3VsZnpjMjY1eDZt&utm_source=qr" target="_blank"
+                    class="text-brand-text/70 hover:text-white hover:scale-110 transition-all p-2">
+                    <i data-lucide="instagram" class="w-7 h-7 md:w-6 md:h-6"></i>
+                </a>
+    
+                <a href="https://www.facebook.com/profile.php?id=61576637080460" target="_blank"
+                    class="text-brand-text/70 hover:text-white hover:scale-110 transition-all p-2">
+                    <i data-lucide="facebook" class="w-7 h-7 md:w-6 md:h-6"></i>
+                </a>
+    
+                <a href="https://x.com/abrammisha" target="_blank" rel="noopener noreferrer"
+                    class="text-brand-text/70 hover:text-white hover:scale-110 transition-all p-2 inline-flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 md:w-4 md:h-4 icon-x">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+    
+            </div>
+    
+            <!-- Footer note -->
+            <div class="text-brand-text/40 text-xs uppercase tracking-widest">
+                &copy; <span id="year">2026</span> Aether. A E T H E R — Eternal instant.
+            </div>
+    
+        </div>
+    </footer>
+
+</div>
+<!-- .site-content ends here; FABs outside so position:fixed is viewport-relative -->
+
+<!-- Botón Volver Arriba (solo en footer) -->
+<button id="btnSubir" aria-label="Volver arriba" class="md:hidden fixed bottom-[72px] right-5
+           w-10 h-10
+           flex items-center justify-center
+           rounded-full
+           bg-black/35 backdrop-blur-md
+           border border-white/15
+           text-white/60
+           hover:text-white
+           hover:border-white/30
+           hover:bg-black/50
+           transition-all duration-300
+           opacity-70
+           z-[40]">
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+</button>
+
+<!-- Ritual VU immersive overlay -->
+<div id="ritual-vu-overlay" aria-hidden="true">
+    <button id="ritual-vu-close" type="button" aria-label="Close VU ritual"></button>
+    <div class="ritual-vu-stage">
+        <div class="ritual-vu-mount" aria-hidden="true"></div>
+        <div class="ritual-vu-mic-glow" aria-hidden="true"></div>
+        <div class="ritual-vu-meter" role="img" aria-label="Analog VU meter reacting to ambient sound">
+            <div class="ritual-vu-scale ritual-vu-scale-db" aria-hidden="true">
+                <span>-20</span><span>-10</span><span>-7</span><span>-5</span><span>-3</span><span>-2</span><span>-1</span><span>0</span>
+                <span class="scale-red">1</span><span class="scale-red">2</span><span class="scale-red">3</span>
+            </div>
+            <div class="ritual-vu-rays" aria-hidden="true">
+                <span style="--ray-angle:-52deg"></span>
+                <span style="--ray-angle:-41.5deg"></span>
+                <span style="--ray-angle:-31deg"></span>
+                <span style="--ray-angle:-20.5deg"></span>
+                <span style="--ray-angle:-10deg"></span>
+                <span style="--ray-angle:0deg"></span>
+                <span style="--ray-angle:10deg"></span>
+                <span style="--ray-angle:20.5deg"></span>
+                <span style="--ray-angle:31deg"></span>
+                <span style="--ray-angle:41.5deg"></span>
+                <span style="--ray-angle:52deg"></span>
+            </div>
+            <div class="ritual-vu-needle-wrap" aria-hidden="true">
+                <div class="ritual-vu-needle"></div>
+                <div class="ritual-vu-pivot"></div>
+            </div>
+            <div class="ritual-vu-window" aria-hidden="true"></div>
+            <div class="ritual-vu-brand">VU</div>
+        </div>
+        <p id="ritual-vu-status" class="ritual-vu-status" aria-live="polite">Tap to awaken microphone</p>
+    </div>
+</div>
+
+    <!-- Supabase для лайков -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/script.js" defer></script>
+    <!-- Load lightweight UI scripts late to reduce initial CPU/renderer work -->
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <!-- Tailwind already loaded in head; removed duplicate deferred CDN to avoid race conditions -->
+    <script>
+            // Ensure icons are created once lucide is available (in case it loads after DOMContentLoaded)
+            (function ensureLucide() {
+                if (window.lucide) { try { lucide.createIcons(); } catch (e) { } return; }
+                const t = setInterval(() => { if (window.lucide) { try { lucide.createIcons(); } catch (e) { } clearInterval(t); } }, 120);
+                setTimeout(() => clearInterval(t), 5000);
+            })();
+    </script>
+
+    <!-- Navbar scroll + background behind links -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var navbar = document.getElementById('navbar');
+            function onScroll() {
+                if (window.scrollY > 40) {
+                    navbar.classList.add('nav-scrolled', 'backdrop-blur-xl', 'bg-brand-bg/80', 'py-2', 'shadow-lg');
+                    navbar.classList.remove('py-4', 'md:py-8');
+                } else {
+                    navbar.classList.remove('nav-scrolled', 'backdrop-blur-xl', 'bg-brand-bg/80', 'py-2', 'shadow-lg');
+                    navbar.classList.add('py-4', 'md:py-8');
+                }
+            }
+            window.addEventListener('scroll', onScroll);
+            onScroll();
+        });
+    </script>
+
+<!-- BOTTOM FIXED PLAYER (outside .site-content so it's always visible) -->
+<div id="bottom-player" class="fixed bottom-0 left-0 w-full
+    z-[40]
+    transition-all duration-500 ease-out
+    player-enhanced
+    player-with-expand
+">
+    <!-- Expanded panel: session cards (part of the player, opens on click) -->
+    <div id="player-expanded-overlay" class="player-expanded-overlay" aria-hidden="true" aria-label="Now playing sessions">
+        <div class="player-expanded-backdrop" id="player-expanded-backdrop" aria-hidden="true"></div>
+        <div class="player-expanded-content">
+            <div class="player-expanded-handle" id="player-expanded-handle" aria-label="Close sessions">
+                <span class="player-expanded-handle-bar"></span>
+                <span class="player-expanded-handle-label">Close sessions</span>
+            </div>
+            <div class="player-expanded-cards-wrap">
+                <div class="relative w-full rounded-3xl overflow-x-hidden sets-image-bg sessions-plaque py-4 md:py-6 sessions-plaque-expanded">
+                    <div class="sessions-plaque-bg" aria-hidden="true"></div>
+                    <div class="sessions-plaque-inner relative w-full max-w-[100vw] py-2 md:py-4">
+                        <h4 class="sessions-panel-title text-[11px] uppercase tracking-[0.35em] mb-1 text-center">Sonic Anthology</h4>
+                        <p class="text-[10px] uppercase tracking-[0.2em] text-brand-text/50 text-center mb-4">Headphones recommended</p>
+                        <div id="playlist-container"
+                            class="flex flex-nowrap gap-4 md:gap-8 overflow-x-auto px-8 pt-2 no-scrollbar items-center"
+                            style="-webkit-overflow-scrolling: touch; scroll-behavior: smooth;">
+                            <!-- Filled by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="player-collapsed-handle" id="player-collapsed-handle" aria-label="Open sessions">
+        <span class="player-expanded-handle-bar"></span>
+        <span class="player-collapsed-handle-label">Sessions</span>
+    </div>
+
+    <div id="progress-container" class="absolute -top-[20px] left-1/2 -translate-x-1/2 
+            w-[calc(100%-80px)] h-[24px]
+            flex items-end cursor-pointer group z-[150]" style="touch-action:none;"
+            role="slider" aria-label="Track position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0:00">
+        <div class="w-full bg-white/10 relative group-hover:h-[10px] transition-all duration-300 rounded-full barra-enhanced backdrop-blur-sm">
+            <div id="progress-bar"
+                class="h-full bg-gradient-to-r from-brand-accentDark/95 via-brand-accent/92 to-[#ffb84d]/95 w-0 relative transition-all duration-100 ease-linear rounded-full progress-bar-glow">
+            </div>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 sm:h-24 flex items-center justify-between gap-4 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-brand-accent/5 to-transparent opacity-50 pointer-events-none"></div>
+        <div class="flex items-center gap-3 sm:gap-4 flex-1 min-w-0 relative z-10">
+            <div class="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 hidden sm:block player-image-container">
+                <div class="absolute inset-0 rounded-full bg-gradient-to-br from-brand-accent/20 to-transparent blur-sm"></div>
+                <img id="player-img" src="" alt="Cover"
+                    class="w-full h-full object-cover rounded-full border-2 border-white/20 animate-spin-slow relative z-10 player-image-shadow">
+                <div class="absolute inset-0 rounded-full border border-brand-accent/30 animate-pulse-slow"></div>
+                <div class="absolute -inset-1 rounded-full border border-white/5"></div>
+            </div>
+            <div id="player-info" class="flex flex-col justify-center min-w-0 overflow-hidden cursor-pointer group/info">
+                <div class="flex items-center gap-2">
+                    <h3 id="track-title" class="text-white text-sm sm:text-base font-medium truncate leading-tight group-hover/info:text-brand-accent transition-colors duration-300">Select a Session</h3>
+                </div>
+                <p id="track-artist" class="text-brand-text/60 text-[10px] sm:text-xs uppercase tracking-wider truncate mt-0.5 group-hover/info:text-brand-text/80 transition-colors duration-300">Aether</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4 sm:gap-6 lg:gap-8 flex-shrink-0 relative z-10">
+            <button id="prev-btn" class="text-white/50 hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 p-2 rounded-full hover:bg-white/5 control-btn" aria-label="Previous">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+            </button>
+            <button id="play-btn" class="w-12 h-12 sm:w-14 sm:h-14 text-white rounded-full flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 bg-gradient-to-br from-white/10 to-white/5 border border-white/20 backdrop-blur-md shadow-[0_0_20px_rgba(204,136,0,0.3),0_0_40px_rgba(204,136,0,0.1)] hover:shadow-[0_0_30px_rgba(204,136,0,0.5),0_0_60px_rgba(204,136,0,0.2)] hover:border-brand-accent/50 play-btn-enhanced" aria-label="Play">
+                <svg id="play-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="ml-0.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </button>
+            <button id="next-btn" class="text-white/50 hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 p-2 rounded-full hover:bg-white/5 control-btn" aria-label="Next">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+            </button>
+        </div>
+        <div class="hidden md:flex items-center gap-4 flex-1 justify-end font-mono text-xs text-brand-text/50 relative z-10">
+            <button id="go-sessions" class="px-4 py-1.5 rounded-full border border-white/10 text-[10px] uppercase tracking-widest text-white/60 hover:text-white hover:border-white/30 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105 sessions-btn">Sessions</button>
+            <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 backdrop-blur-sm border border-white/5 time-display">
+                <span id="current-time" class="text-white/80 font-medium">00:00</span>
+                <span class="opacity-30 text-white/40">/</span>
+                <span id="total-time" class="text-white/60">00:00</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WhatsApp: fixed at bottom of page; when player appears, raises above it -->
+<a id="floating-whatsapp"
+    href="https://wa.me/34631244350?text=Hi%20Aether%2C%20I%27d%20like%20to%20check%20availability%20for%20a%20session.%20Can%20we%20chat%3F"
+    target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="fixed right-5
+        w-10 h-10
+        flex items-center justify-center
+        rounded-full
+        bg-black/20 backdrop-blur-sm
+        border border-white/10
+        text-white/50
+        hover:text-white/90
+        hover:border-white/20
+        hover:bg-black/35
+        transition-all duration-300
+        opacity-75
+        z-[100]">
+    <i data-lucide="message-circle" class="w-5 h-5" stroke-width="1.3"></i>
+</a>
+
+<!-- Marco Global Decorativo -->
+<div id="global-frame"></div>
+<div id="warm-overlay"></div>
+
+<!-- Privacy notice (local storage only, no YouTube) — English -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[9999] 
+            translate-y-[120%] transition-transform duration-700 ease-out
+            px-6 py-8 md:py-6 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
+
+    <div class="max-w-xl text-center md:text-left flex flex-col gap-2">
+        <p id="legal-banner-title" class="text-[11px] uppercase tracking-[0.2em] text-brand-accent font-bold">
+            Privacy
+        </p>
+        <p class="text-xs text-brand-text/60 font-light leading-relaxed">
+            <span id="legal-banner-text">We use local storage to remember your preferences (language, intro animation). We do not use third-party cookies.</span>
+            <a href="#" id="open-privacy-btn"
+                class="text-white/90 hover:text-white underline decoration-white/30 underline-offset-4 transition-colors">
+                <span id="legal-banner-link">Read policy</span>
+            </a>
+        </p>
+    </div>
+
+    <div class="flex items-center gap-4 w-full md:w-auto justify-center">
+        <button type="button" id="cookie-banner-ok"
+            class="px-8 py-3 rounded-full bg-brand-accent/10 border border-brand-accent/40 text-[10px] uppercase tracking-widest text-brand-accent hover:bg-brand-accent hover:text-black transition-all font-medium cursor-pointer">
+            Understood
+        </button>
+    </div>
+</div>
+
+<!-- Privacy Policy Modal -->
+<div id="privacy-modal" 
+    class="fixed inset-0 z-[10000] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
+
+    <div id="privacy-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+    <div class="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto custom-scrollbar
+                bg-[#0a0a0a] border border-white/10 rounded-3xl shadow-2xl
+                transform scale-95 transition-transform duration-300" id="privacy-content-box">
+
+        <button id="close-privacy-btn"
+            class="absolute top-4 right-4 p-2 text-white/50 hover:text-white transition-colors z-50">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <div class="p-8 md:p-10 text-brand-text/80 font-light text-sm leading-relaxed space-y-6" id="privacy-text-content">
+
+            <div class="mb-8">
+                <h2 class="font-serif text-2xl text-white mb-2">Privacy Policy</h2>
+                <div class="w-10 h-[1px] bg-brand-accent"></div>
+            </div>
+
+            <p><strong>1. Identity of the Owner</strong><br>
+                AETHER (hereinafter, "the Owner"). Informational and artistic website with no direct collection of personal data.</p>
+
+            <p><strong>2. Data Collection</strong><br>
+                This website has no registration forms, online store, or comment systems. We do not collect names, emails, or personal data from users.</p>
+
+            <p><strong>3. Local Storage</strong><br>
+                We use local storage in your browser to remember if you have seen the intro animation and your preferences (e.g. language). We do not use third-party cookies.</p>
+
+            <p><strong>4. Your Rights</strong><br>
+                You can delete data stored in your browser (cache and local storage) at any time via your browser settings.</p>
+
+            <p class="text-xs opacity-50 mt-8 pt-4 border-t border-white/10">
+                Last updated: January 2026.
+            </p>
+        </div>
+    </div>
+</div>
+
+    <!-- Vision panel — opens when clicking Vision in navbar -->
+    <div id="about-expanded-overlay" class="about-expanded-overlay" aria-hidden="true" aria-label="Vision">
+        <div class="about-expanded-backdrop" id="about-expanded-backdrop" aria-hidden="true"></div>
+        <div class="about-expanded-content">
+            <div class="about-expanded-handle" id="about-expanded-handle" aria-label="Close">
+                <span class="about-expanded-handle-bar"></span>
+                <span class="about-expanded-handle-label">Close</span>
+            </div>
+            <h2 class="about-panel-title">Vision</h2>
+            <div class="about-expanded-inner" id="about-expanded-inner">
+                <!-- Content is cloned from #about (without gal-3 image) on open -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact panel — opens when clicking Contact in navbar -->
+    <div id="contact-expanded-overlay" class="contact-expanded-overlay" aria-hidden="true" aria-label="Contact">
+        <div class="contact-expanded-backdrop" id="contact-expanded-backdrop" aria-hidden="true"></div>
+        <div class="contact-expanded-content">
+            <div class="contact-expanded-handle" id="contact-expanded-handle" aria-label="Close contact">
+                <span class="contact-expanded-handle-bar"></span>
+                <span class="contact-expanded-handle-label">Close</span>
+            </div>
+            <h2 class="contact-panel-title">Contact</h2>
+            <div class="contact-expanded-inner" id="contact-expanded-inner">
+                <!-- Content is cloned from #contact on open -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Records panel — opens when clicking Selection in navbar -->
+    <div id="records-expanded-overlay" class="records-expanded-overlay" aria-hidden="true" aria-label="Vinyl Selection">
+        <div class="records-expanded-backdrop" id="records-expanded-backdrop" aria-hidden="true"></div>
+        <div class="records-expanded-content">
+            <div class="records-expanded-handle" id="records-expanded-handle" aria-label="Close selection">
+                <span class="records-expanded-handle-bar"></span>
+                <span class="records-expanded-handle-label">Close selection</span>
+            </div>
+            <h2 class="records-panel-title">Vinyl Selection</h2>
+            <p class="records-panel-swipe-hint" aria-hidden="true">
+                <span class="records-panel-swipe-hint-es">Desliza para ver más</span>
+                <span class="records-panel-swipe-hint-en">Swipe to see more</span>
+            </p>
+            <div class="records-expanded-inner" id="records-expanded-inner">
+                <!-- Content is cloned from #records on open -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
