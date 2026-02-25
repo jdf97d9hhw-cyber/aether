@@ -2746,7 +2746,7 @@ a.lang-btn:active {
     transition: box-shadow 0.4s ease, backdrop-filter 0.4s ease;
 }
 
-/* Placa de sesiones: imagen con blur + degradado oscuro para legibilidad */
+/* Placa de sesiones: efecto cristal (como panel suscribirse), sin imagen de fondo */
 .sessions-plaque .sessions-plaque-bg {
     position: absolute;
     inset: 0;
@@ -2754,13 +2754,17 @@ a.lang-btn:active {
     z-index: 0;
     pointer-events: none;
     opacity: 1;
-    background:
-        linear-gradient(180deg, rgba(8, 6, 5, 0.62) 0%, rgba(8, 6, 5, 0.76) 58%, rgba(8, 6, 5, 0.84) 100%),
-        url('../img/section-plate-warm.png') center / cover no-repeat;
-    -webkit-filter: blur(4px);
-    filter: blur(4px);
-    transform: scale(1.05);
-    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(180deg,
+        rgba(28, 22, 16, 0.36) 0%,
+        rgba(20, 16, 12, 0.5) 50%,
+        rgba(22, 18, 14, 0.44) 100%);
+    -webkit-backdrop-filter: blur(16px) saturate(135%);
+    backdrop-filter: blur(16px) saturate(135%);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 1px 0 0 rgba(255, 255, 255, 0.04) inset,
+        inset 0 0 80px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.4s ease, backdrop-filter 0.4s ease;
 }
 .sessions-plaque-bg::before,
 .sessions-plaque-bg::after {
@@ -2771,13 +2775,15 @@ a.lang-btn:active {
 }
 .sessions-plaque-bg::before {
     z-index: 1;
+    border-radius: inherit;
     background: linear-gradient(180deg,
-        rgba(6, 5, 4, 0.16) 0%,
-        rgba(6, 5, 4, 0.38) 42%,
-        rgba(6, 5, 4, 0.54) 100%);
+        rgba(255, 242, 228, 0.05) 0%,
+        transparent 22%,
+        transparent 100%);
 }
 .sessions-plaque-bg::after {
     z-index: 2;
+    border-radius: inherit;
     background: radial-gradient(120% 85% at 50% 0%, rgba(204, 136, 0, 0.09) 0%, rgba(204, 136, 0, 0) 72%);
 }
 
@@ -4183,22 +4189,33 @@ body:not(.player-expanded-open) .player-collapsed-handle .player-expanded-handle
     letter-spacing: 0.25em !important;
     margin-bottom: 0.5rem !important;
 }
-/* Placa expandida: imagen con blur suave, más expandida, bajada 50px */
+/* Placa expandida: efecto cristal (como suscribirse), sin imagen de fondo */
 .player-expanded-overlay .sessions-plaque-expanded .sessions-plaque-bg {
     border-radius: inherit;
     top: 0;
     opacity: 1;
-    background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.65) 100%),
-        url('../img/section-plate-warm.png') center calc(50% + 50px) / cover no-repeat;
-    -webkit-filter: blur(4px);
-    filter: blur(4px);
-    transform: scale(1.25);
-    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(180deg,
+        rgba(28, 22, 16, 0.36) 0%,
+        rgba(20, 16, 12, 0.5) 50%,
+        rgba(22, 18, 14, 0.44) 100%);
+    -webkit-backdrop-filter: blur(16px) saturate(135%);
+    backdrop-filter: blur(16px) saturate(135%);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 1px 0 0 rgba(255, 255, 255, 0.04) inset,
+        inset 0 0 80px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.4s ease, backdrop-filter 0.4s ease;
 }
-.player-expanded-overlay .sessions-plaque-expanded .sessions-plaque-bg::before,
+.player-expanded-overlay .sessions-plaque-expanded .sessions-plaque-bg::before {
+    display: block;
+    background: linear-gradient(180deg,
+        rgba(255, 242, 228, 0.05) 0%,
+        transparent 22%,
+        transparent 100%);
+}
 .player-expanded-overlay .sessions-plaque-expanded .sessions-plaque-bg::after {
-    display: none;
+    display: block;
+    background: radial-gradient(120% 85% at 50% 0%, rgba(204, 136, 0, 0.09) 0%, rgba(204, 136, 0, 0) 72%);
 }
 .player-expanded-overlay .player-expanded-cards-wrap {
     border-radius: inherit;
@@ -5236,6 +5253,11 @@ html[lang="en"] .records-panel-swipe-hint .records-panel-swipe-hint-es { display
         box-shadow: 0 -10px 36px rgba(0, 0, 0, 0.35);
         padding-bottom: max(10px, env(safe-area-inset-bottom));
     }
+    /* Panel Visión: más alto en móvil para que quepa el manifiesto y se pueda hacer scroll */
+    .about-expanded-overlay .about-expanded-content {
+        height: min(94dvh, calc(100dvh - 48px));
+        max-height: calc(100dvh - 48px);
+    }
 
     .about-expanded-overlay .about-expanded-inner,
     .contact-expanded-overlay .contact-expanded-inner,
@@ -5250,11 +5272,21 @@ html[lang="en"] .records-panel-swipe-hint .records-panel-swipe-hint-es { display
     .about-expanded-overlay .about-expanded-inner > * {
         transform: none !important;
         max-width: 100%;
+        flex-shrink: 0; /* que la placa no se comprima y el texto quepa; el scroll va en .about-expanded-inner */
     }
 
     .about-expanded-overlay .about-plaque {
         min-height: auto;
         border-radius: 22px;
+    }
+
+    /* Manifiesto en panel Visión (móvil): texto más compacto para que quepa y se lea bien al hacer scroll */
+    .about-expanded-overlay .about-plaque .about-manifiesto {
+        font-size: 0.8125rem;
+        line-height: 1.55;
+    }
+    .about-expanded-overlay .about-plaque .about-manifiesto p {
+        margin-bottom: 0.4rem;
     }
 
     .about-expanded-overlay .subscribe-glass-card.about-plaque {

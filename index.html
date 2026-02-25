@@ -51,7 +51,7 @@
     <!-- Security -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' https: data: blob:; media-src 'self' https: blob:; frame-src *;" />
+        content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' https: data: blob:; media-src 'self' https: blob:; frame-src 'none';" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <!-- PWA / Theme -->
@@ -638,15 +638,15 @@
         <div class="music-links pt-6 md:pt-10 text-center">
             <p class="text-brand-text/80 text-sm mb-4">Escucha más en:</p>
             <div class="flex justify-center gap-6">
-                <a href="https://open.spotify.com/playlist/37i9dQZF1E4x4ZHTG9uviD?si=CGP5_go_T3aLpGTA1gj8cQ" target="_blank"
+                <a href="https://open.spotify.com/playlist/37i9dQZF1E4x4ZHTG9uviD?si=CGP5_go_T3aLpGTA1gj8cQ" target="_blank" rel="noopener noreferrer"
                     class="flex items-center gap-2 text-sm hover:text-white transition-all hover:scale-105">
                     <i data-lucide="music" class="w-4 h-4"></i> Spotify
                 </a>
-                <a href="https://soundcloud.com/abrammisha?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank"
+                <a href="https://soundcloud.com/abrammisha?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" rel="noopener noreferrer"
                     class="flex items-center gap-2 text-sm hover:text-white transition-all hover:scale-105">
                     <i data-lucide="cloud" class="w-4 h-4"></i> SoundCloud
                 </a>
-                <a href="https://www.mixcloud.com/aether_msh/" target="_blank"
+                <a href="https://www.mixcloud.com/aether_msh/" target="_blank" rel="noopener noreferrer"
                     class="flex items-center gap-2 text-sm hover:text-white transition-all hover:scale-105">
                     <i data-lucide="radio" class="w-4 h-4"></i> Mixcloud
                 </a>
@@ -776,13 +776,13 @@
                     <div class="record-overlay absolute inset-0 left-0 w-full h-full flex items-center justify-center z-20">
                         <div class="flex flex-col gap-3 w-full record-overlay__actions">
                             <a href="https://es.juno.co.uk/products/pink-floyd-the-dark-side-of-the-moon-vinyl/1072642-01/"
-                                target="_blank" onclick="event.stopPropagation()"
+                                target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"
                                 class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
                                 Juno
                             </a>
 
                             <a href="https://www.discogs.com/ru/master/10362-Pink-Floyd-The-Dark-Side-Of-The-Moon"
-                                target="_blank" onclick="event.stopPropagation()"
+                                target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"
                                 class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
                                 Discogs
                             </a>
@@ -809,13 +809,13 @@
                     <div class="record-overlay absolute inset-0 left-0 w-full h-full flex items-center justify-center z-20">
                         <div class="flex flex-col gap-3 w-full record-overlay__actions">
                             <a href="https://www.junodownload.com/products/mark-de-clive-past-present-tone-poems-across/6943956-02/?srsltid=AfmBOorHHS7qohpOROQhU8IdFdhQe8G8gf003coCDAo010vcP4E4s-Ra"
-                                target="_blank" onclick="event.stopPropagation()"
+                                target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"
                                 class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
                                 Juno
                             </a>
 
                             <a href="https://www.discogs.com/ru/master/3829002-Mark-De-Clive-Lowe-Past-Present-Tone-Poems-Across-Time"
-                                target="_blank" onclick="event.stopPropagation()"
+                                target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"
                                 class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
                                 Discogs
                             </a>
@@ -844,13 +844,13 @@
                         <div class="flex flex-col gap-3 w-full record-overlay__actions">
                             <!-- AÑADIDO: onclick="event.stopPropagation()" para que el enlace funcione sin cerrar el disco -->
                             <a href="https://www.junodownload.com/products/joaquin-joe-claussell-raw-tones/5116424-02/?srsltid=AfmBOop8qmMshTep6jJIihzah-3xkXKqaELOghLE4HCzldY4Vll2uKnA"
-                                target="_blank" onclick="event.stopPropagation()"
+                                target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"
                                 class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
                                 Juno
                             </a>
 
                             <a href="https://www.discogs.com/ru/release/19098088-Joaquin-Joe-Claussell-Raw-Tones"
-                                target="_blank" onclick="event.stopPropagation()"
+                                target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"
                                 class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center ">
                                 Discogs
                             </a>
@@ -878,13 +878,13 @@
                         style="background-color: rgba(5, 5, 5, 0.85);">
                         <div class="flex flex-col gap-3 w-full" style="padding-left: 25px; padding-right: 25px;">
                             <a href="https://www.junodownload.com/products/musclecars-street-dreams/4667925-02/?srsltid=AfmBOopoDKe0y1RG5BAgHnkQVqWMDEyEsTpJ80y_0M08rSa9Vut7Wz55"
-                                target="_blank" onclick="event.stopPropagation()"
+                                target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"
                                 class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
                                 Juno
                             </a>
 
                             <a href="https://www.discogs.com/ru/master/2923954-Musclecars-Street-Dreams?srsltid=AfmBOoqajyDxzGeHeFzGd5EIq2Mhf6ndqQh6WAt07AiK3zQ76MbSB-Hw"
-                                target="_blank" onclick="event.stopPropagation()"
+                                target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"
                                 class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
                                 Discogs
                             </a>
@@ -910,14 +910,14 @@
 
                     <div class="record-overlay absolute inset-0 left-0 w-full h-full flex items-center justify-center z-20">
                         <div class="flex flex-col gap-3 w-full record-overlay__actions">
-                            <a href="https://es.juno.co.uk/artists/Joan+Bibiloni/" target="_blank"
+                            <a href="https://es.juno.co.uk/artists/Joan+Bibiloni/" target="_blank" rel="noopener noreferrer"
                                 onclick="event.stopPropagation()"
                                 class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
                                 Juno
                             </a>
 
                             <a href="https://www.discogs.com/ru/release/2660007-Joan-Bibiloni-Born?srsltid=AfmBOoqYhh1ivfdu87ETVn2AafoGcwO7pG1FA0Cm21LqeKSeY1etjEyP"
-                                target="_blank" onclick="event.stopPropagation()"
+                                target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"
                                 class="w-full py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/20 rounded-xl text-white hover:bg-white hover:text-black transition-colors text-center">
                                 Discogs
                             </a>
@@ -1184,12 +1184,12 @@
         <!-- Redes -->
         <div class="flex justify-center gap-6 md:gap-8 mb-8 md:mb-12">
 
-            <a href="https://www.instagram.com/aether_msh?igsh=d3VsZnpjMjY1eDZt&utm_source=qr" target="_blank"
+            <a href="https://www.instagram.com/aether_msh?igsh=d3VsZnpjMjY1eDZt&utm_source=qr" target="_blank" rel="noopener noreferrer"
                 class="text-brand-text/70 hover:text-white hover:scale-110 transition-all p-2">
                 <i data-lucide="instagram" class="w-7 h-7 md:w-6 md:h-6"></i>
             </a>
 
-            <a href="https://www.facebook.com/profile.php?id=61576637080460" target="_blank"
+            <a href="https://www.facebook.com/profile.php?id=61576637080460" target="_blank" rel="noopener noreferrer"
                 class="text-brand-text/70 hover:text-white hover:scale-110 transition-all p-2">
                 <i data-lucide="facebook" class="w-7 h-7 md:w-6 md:h-6"></i>
             </a>
@@ -1273,7 +1273,7 @@
 
     <script src="js/script.js" defer></script>
     <!-- Load lightweight UI scripts late to reduce initial CPU/renderer work -->
-    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://unpkg.com/lucide@0.460.0"></script>
     <!-- Tailwind already loaded in head; removed duplicate deferred CDN to avoid race conditions -->
     <script>
             // Ensure icons are created once lucide is available (in case it loads after DOMContentLoaded)

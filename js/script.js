@@ -310,9 +310,8 @@ document.addEventListener('DOMContentLoaded', function () {
     updateNavbarHeightVar();
     updateNavScrollEffect(getScrollY());
     window.addEventListener('resize', updateNavbarHeightVar);
+    // Un solo listener en window; el scroll real ocurre en el viewport. Evita trabajo duplicado.
     window.addEventListener('scroll', onScrollUnified, { passive: true });
-    document.body.addEventListener('scroll', onScrollUnified, { passive: true });
-    document.addEventListener('scroll', onScrollUnified, { passive: true, capture: true });
     setTimeout(function () { updateNavScrollEffect(getScrollY()); }, 100);
 
     // Click suave en el logo DJ Aether para volver al top
@@ -406,10 +405,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Para que una sesión aparezca solo en "Más sesiones" (y no en las tarjetas), añade showInCards: false.
     const tracks = [
         {
-        title: "Unfiltered",
-        title_en: "Unfiltered",
-        artist: "Aether - Analog Soul",
-        artist_en: "Aether - Analog Soul",
+        title: "Unfiltered Vibration",
+        title_en: "Unfiltered Vibration",
+        artist: "Aether · Analog Soul",
+        artist_en: "Aether · Analog Soul",
         src: "audio/Unfiltered.m4a",
         cover: "img/car11.png",
         bgImage: "img/tar-dg-11.webp",
@@ -422,8 +421,8 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: "Where Love Lives",
             title_en: "Where Love Lives",
-            artist: "Aether - HLD WTHN",
-            artist_en: "Aether - HLD WTHN",
+            artist: "Aether · HLD WTHN",
+            artist_en: "Aether · HLD WTHN",
             src: "audio/11.m4a",
             cover: "img/car1.png",
             bgImage: "img/tar-dg-7.webp",
@@ -435,8 +434,8 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: "Elevation in Colors",
             title_en: "Elevation in Colors",
-            artist: "Aether – Warm Frequencies",
-            artist_en: "Aether – Warm Frequencies",
+            artist: "Aether · Warm Frequencies",
+            artist_en: "Aether · Warm Frequencies",
             src: "audio/Elevation_in_Warm_Colors.m4a",
             cover: "img/car2.png",
             bgImage: "img/tar-dg-10.webp",
@@ -448,8 +447,8 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: "House Is A Feeling",
             title_en: "House Is A Feeling",
-            artist: "Aether – Soul Transmission",
-            artist_en: "Aether – Soul Transmission",
+            artist: "Aether · Soul Transmission",
+            artist_en: "Aether · Soul Transmission",
             src: "audio/House_Is_A_Feeling.m4a",
             cover: "img/car3.png",
             bgImage: "img/tar-dg-9.webp",
@@ -461,8 +460,8 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: "VOID",
             title_en: "VOID",
-            artist: "Aether • For Inner Space",
-            artist_en: "Aether • For Inner Space",
+            artist: "Aether · For Inner Space",
+            artist_en: "Aether · For Inner Space",
             src: "audio/10.m4a",
             cover: "img/car4.png",
             bgImage: "img/tar-dg-6.webp", 
@@ -473,8 +472,8 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: "Roots in Motion",
             title_en: "Roots in Motion",
-            artist: "Aether • Organic Grooves",
-            artist_en: "Aether • Organic Grooves",
+            artist: "Aether · Organic Grooves",
+            artist_en: "Aether · Organic Grooves",
             src: "audio/12.m4a",
             cover: "img/car5.png",
             bgImage: "img/tar-dg-8.webp", 
@@ -485,8 +484,8 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: "BLUE SUNRISE",
             title_en: "BLUE SUNRISE",
-            artist: "Aether • Warm Crudo",
-            artist_en: "Aether • Warm Crudo",
+            artist: "Aether · Warm Crudo",
+            artist_en: "Aether · Warm Crudo",
             src: "audio/Blue_Sunrise.m4a",
             cover: "img/car6.png",
             bgImage: "img/tar-dg-5.webp",
@@ -497,8 +496,8 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: "SACRED PULSE",
             title_en: "SACRED PULSE",
-            artist: "Aether • Deep Soul Mix",
-            artist_en: "Aether • Deep Soul Mix",
+            artist: "Aether · Deep Soul Mix",
+            artist_en: "Aether · Deep Soul Mix",
             src: "audio/9.m4a",
             cover: "img/car7.png",
             bgImage: "img/tar-dg-1.webp", 
@@ -509,8 +508,8 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: "WARM FLOW",
             title_en: "WARM FLOW",
-            artist: "Aether • Sonic Presence",
-            artist_en: "Aether • Sonic Presence",
+            artist: "Aether · Sonic Presence",
+            artist_en: "Aether · Sonic Presence",
             src: "audio/8.m4a",
             cover: "img/car8.png",
             bgImage: "img/tar-dg-2.webp", 
@@ -521,8 +520,8 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: "INNER WISDOM",
             title_en: "INNER WISDOM",
-            artist: "Aether • Deep Listening",
-            artist_en: "Aether • Deep Listening",
+            artist: "Aether · Deep Listening",
+            artist_en: "Aether · Deep Listening",
             src: "audio/7.m4a",
             cover: "img/car9.png",
             bgImage: "img/tar-dg-4.webp", 
@@ -533,8 +532,8 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: "ATMOSPHERE",
             title_en: "ATMOSPHERE",
-            artist: "Aether • G.Collector",
-            artist_en: "Aether • G.Collector",
+            artist: "Aether · G.Collector",
+            artist_en: "Aether · G.Collector",
             src: "audio/6.m4a",
             cover: "img/car10.png",
             bgImage: "img/tar-dg-3.webp", 
