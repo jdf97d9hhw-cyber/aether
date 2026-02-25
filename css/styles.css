@@ -2411,8 +2411,12 @@ html[lang="en"] .records-placa-hint-es { display: none; }
 @media (max-width: 380px) {
     .session-card { width: 75vw; height: 400px; }
     .session-card.active { height: 416px; }
-    .card-vinyl-container { width: 130px; height: 130px; }
-    .session-card.active .card-vinyl-container { width: 142px; height: 142px; }
+    .card-vinyl-container { width: 158px; height: 158px; }
+    .session-card.active .card-vinyl-container { width: 172px; height: 172px; }
+}
+@media (max-width: 767px) and (min-width: 381px) {
+    .session-card .card-vinyl-container { width: 172px; height: 172px; }
+    .session-card.active .card-vinyl-container { width: 186px; height: 186px; }
 }
 
 @media (min-width: 768px) {
@@ -3865,7 +3869,7 @@ a.lang-btn:active {
 @media (max-width: 767px) {
     .player-expanded-overlay {
         /* Margen superior fijo (navbar + section-index + reproductor). El panel no debe subir al logo/selector. */
-        --panel-top-mobile: 240px;
+        --panel-top-mobile: 290px;
         height: calc(100vh - var(--panel-top-mobile));
         max-height: calc(100vh - var(--panel-top-mobile));
         --player-expand-top-safe: var(--panel-top-mobile);
@@ -4359,6 +4363,19 @@ body:not(.player-expanded-open) .player-collapsed-handle .player-expanded-handle
     .player-expanded-overlay .session-card.active {
         height: min(430px, 100%) !important;
         max-height: 100% !important;
+    }
+    /* Discos más grandes en móvil dentro del panel */
+    .player-expanded-overlay .session-card .card-vinyl-container {
+        min-width: 100px !important;
+        min-height: 100px !important;
+        max-width: 200px !important;
+        max-height: 200px !important;
+        width: 55% !important;
+    }
+    .player-expanded-overlay .session-card.active .card-vinyl-container {
+        max-width: 218px !important;
+        max-height: 218px !important;
+        width: 62% !important;
     }
     @container playlist-panel-mobile (max-height: 420px) {
         .player-expanded-overlay .session-card {
