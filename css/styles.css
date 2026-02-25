@@ -3861,12 +3861,14 @@ a.lang-btn:active {
     max-height: calc(100vh - 95px);
     z-index: 1;
 }
-/* Móvil: panel de sesiones solo hasta la barrita de links (section-index con puntito amarillo) */
+/* Móvil: panel de sesiones solo hasta la barrita de links (section-index); no invadir logo/idiomas */
 @media (max-width: 767px) {
     .player-expanded-overlay {
-        --player-expand-top-safe: calc(var(--navbar-height, 72px) + 44px);
-        height: calc(100vh - var(--navbar-height, 72px) - 44px - 56px);
-        max-height: calc(100vh - var(--navbar-height, 72px) - 44px - 56px);
+        /* Margen superior fijo (navbar + section-index + reproductor). El panel no debe subir al logo/selector. */
+        --panel-top-mobile: 240px;
+        height: calc(100vh - var(--panel-top-mobile));
+        max-height: calc(100vh - var(--panel-top-mobile));
+        --player-expand-top-safe: var(--panel-top-mobile);
     }
 }
 .player-expanded-overlay {
