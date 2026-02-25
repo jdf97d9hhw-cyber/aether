@@ -6649,7 +6649,9 @@ html:not(.styles-loaded) #cookie-banner {
  .shorts-badge-new {
      display: inline-flex;
      align-items: center;
-     padding: 1.5px 6px;
+     justify-content: center;
+     padding: 4px 6px;
+     line-height: 1;
      background: rgba(220, 140, 60, 0.85);
      color: #fff;
      font-size: 7px;
