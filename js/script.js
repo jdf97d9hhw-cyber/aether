@@ -408,8 +408,8 @@ document.addEventListener('DOMContentLoaded', function () {
         {
         title: "Unfiltered",
         title_en: "Unfiltered",
-        artist: "Aether",
-        artist_en: "Aether",
+        artist: "Aether - Analog Soul",
+        artist_en: "Aether - Analog Soul",
         src: "audio/Unfiltered.m4a",
         cover: "img/car11.png",
         bgImage: "img/tar-dg-11.webp",

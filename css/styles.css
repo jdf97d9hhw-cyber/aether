@@ -3869,7 +3869,7 @@ a.lang-btn:active {
 @media (max-width: 767px) {
     .player-expanded-overlay {
         /* Margen superior fijo (navbar + section-index + reproductor). El panel no debe subir al logo/selector. */
-        --panel-top-mobile: 290px;
+        --panel-top-mobile: 240px;
         height: calc(100vh - var(--panel-top-mobile));
         max-height: calc(100vh - var(--panel-top-mobile));
         --player-expand-top-safe: var(--panel-top-mobile);
