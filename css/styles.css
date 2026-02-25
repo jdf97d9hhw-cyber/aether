@@ -882,14 +882,14 @@ html.styles-loaded #loading-screen {
     transition: transform 0.3s ease-out, background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.playlist-item-hover:hover {
-    /* 3. EN LUGAR DE MOVERLO, LO ESCALAMOS MUY POCO */
-    /* Mover (translateY) en listas se ve brusco. Escalar (scale) se ve como que "respira" */
-    transform: scale(1.02) translateZ(0);
-
-    /* 4. Cambios de color sutiles */
-    background-color: rgba(255, 255, 255, 0.08);
-    border-color: rgba(204, 136, 0, 0.4);
+/* Hover solo con cursor real; en táctil evita hovers falsos al hacer scroll en la lista */
+@media (hover: hover) {
+    .playlist-item-hover:hover {
+        /* 3. EN LUGAR DE MOVERLO, LO ESCALAMOS MUY POCO */
+        transform: scale(1.02) translateZ(0);
+        background-color: rgba(255, 255, 255, 0.08);
+        border-color: rgba(204, 136, 0, 0.4);
+    }
 }
 
 /* Estado activo (canción sonando) para que no 'salte' si pasas el mouse */
@@ -2494,11 +2494,13 @@ html[lang="en"] .records-placa-hint-es { display: none; }
 .session-card .session-card-listen-btn-text {
     opacity: 0.92;
 }
-.session-card .session-card-listen-btn:hover {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-color: rgba(255, 255, 255, 0.2) !important;
-    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.22) !important;
-    transform: translateY(-1px) !important;
+@media (hover: hover) {
+    .session-card .session-card-listen-btn:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: rgba(255, 255, 255, 0.2) !important;
+        box-shadow: 0 5px 14px rgba(0, 0, 0, 0.22) !important;
+        transform: translateY(-1px) !important;
+    }
 }
 .session-card .session-card-listen-btn:active {
     transform: translateY(0) !important;
@@ -3018,14 +3020,16 @@ a.lang-btn:active {
                 0 0 0 1px rgba(204, 136, 0, 0.08),
                 inset 0 1px 0 0 rgba(255, 235, 200, 0.1);
 }
-.para-ti-wrap .sessions-list-item:hover {
-    border-color: rgba(204, 136, 0, 0.45);
-    background: linear-gradient(135deg,
-        rgba(255, 252, 248, 0.18) 0%,
-        rgba(255, 248, 238, 0.13) 40%,
-        rgba(204, 160, 80, 0.08) 100%);
-    box-shadow: 0 4px 20px rgba(204, 136, 0, 0.14),
-                inset 0 1px 0 0 rgba(255, 235, 200, 0.12);
+@media (hover: hover) {
+    .para-ti-wrap .sessions-list-item:hover {
+        border-color: rgba(204, 136, 0, 0.45);
+        background: linear-gradient(135deg,
+            rgba(255, 252, 248, 0.18) 0%,
+            rgba(255, 248, 238, 0.13) 40%,
+            rgba(204, 160, 80, 0.08) 100%);
+        box-shadow: 0 4px 20px rgba(204, 136, 0, 0.14),
+                    inset 0 1px 0 0 rgba(255, 235, 200, 0.12);
+    }
 }
 
 .sessions-list-item {
@@ -3118,10 +3122,12 @@ a.lang-btn:active {
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
-.sessions-list-item-link:hover {
-    color: rgba(255, 255, 255, 0.9);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.15);
+@media (hover: hover) {
+    .sessions-list-item-link:hover {
+        color: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.15);
+    }
 }
 .sessions-list-item-link-svg {
     width: 14px;
@@ -3139,18 +3145,19 @@ a.lang-btn:active {
     transition: opacity 0.28s ease;
 }
 
-.sessions-list-item:hover {
-    background: linear-gradient(135deg,
-        rgba(255, 252, 248, 0.16) 0%,
-        rgba(255, 248, 238, 0.11) 50%,
-        rgba(255, 245, 235, 0.08) 100%);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
-}
-
-.sessions-list-item:hover::before {
-    opacity: 1;
+@media (hover: hover) {
+    .sessions-list-item:hover {
+        background: linear-gradient(135deg,
+            rgba(255, 252, 248, 0.16) 0%,
+            rgba(255, 248, 238, 0.11) 50%,
+            rgba(255, 245, 235, 0.08) 100%);
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22),
+                    inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+    }
+    .sessions-list-item:hover::before {
+        opacity: 1;
+    }
 }
 
 .sessions-list-item.active {
@@ -3257,15 +3264,17 @@ a.lang-btn:active {
     }
 }
 
-.sessions-list-item:hover .sessions-list-item-play {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 221, 168, 0.46);
-    color: #fff;
-    transform: translateY(-1px) scale(1.08);
-    box-shadow:
-        0 0 0 1px rgba(255, 220, 150, 0.16),
-        0 0 16px rgba(204, 136, 0, 0.28),
-        0 6px 16px rgba(0, 0, 0, 0.26);
+@media (hover: hover) {
+    .sessions-list-item:hover .sessions-list-item-play {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 221, 168, 0.46);
+        color: #fff;
+        transform: translateY(-1px) scale(1.08);
+        box-shadow:
+            0 0 0 1px rgba(255, 220, 150, 0.16),
+            0 0 16px rgba(204, 136, 0, 0.28),
+            0 6px 16px rgba(0, 0, 0, 0.26);
+    }
 }
 
 .sessions-list-item.active .sessions-list-item-play {
@@ -3609,11 +3618,13 @@ a.lang-btn:active {
         letter-spacing: 0.15em !important;
         opacity: 0.92;
     }
-    .session-card .session-card-listen-btn:hover {
-        background: rgba(255, 255, 255, 0.1) !important;
-        border-color: rgba(255, 255, 255, 0.2) !important;
-        box-shadow: 0 5px 14px rgba(0, 0, 0, 0.22) !important;
-        transform: translateY(-1px) !important;
+    @media (hover: hover) {
+        .session-card .session-card-listen-btn:hover {
+            background: rgba(255, 255, 255, 0.1) !important;
+            border-color: rgba(255, 255, 255, 0.2) !important;
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.22) !important;
+            transform: translateY(-1px) !important;
+        }
     }
     .session-card .session-card-listen-btn:active {
         transform: translateY(0) !important;
@@ -3636,9 +3647,11 @@ a.lang-btn:active {
         transition-delay: 0.05s;
     }
 
-    /* 6. HOVER: ver bloque @media (hover: hover) más abajo */
-    .session-card:not(.active):hover {
-        opacity: 1;
+    /* 6. HOVER: solo con cursor real; en táctil no aplicar para evitar sticky hover al hacer scroll */
+    @media (hover: hover) {
+        .session-card:not(.active):hover {
+            opacity: 1;
+        }
     }
 }
 
@@ -4312,10 +4325,12 @@ body:not(.player-expanded-open) .player-collapsed-handle .player-expanded-handle
     font-size: clamp(0.42rem, 3.8cqw, 0.56rem) !important;
     letter-spacing: 0.03em !important;
 }
-.player-expanded-overlay .session-card .session-card-listen-btn:hover {
-    background: rgba(255, 255, 255, 0.09) !important;
-    border-color: rgba(255, 255, 255, 0.16) !important;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+@media (hover: hover) {
+    .player-expanded-overlay .session-card .session-card-listen-btn:hover {
+        background: rgba(255, 255, 255, 0.09) !important;
+        border-color: rgba(255, 255, 255, 0.16) !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+    }
 }
 .player-expanded-overlay .session-card-footer .h-\[50px\] {
     height: clamp(18px, 10cqw, 32px) !important;
@@ -5678,6 +5693,8 @@ body.records-panel-open #navbar {
     padding-bottom: 4px;
     background: transparent;
     transition: background 0.5s ease, backdrop-filter 0.5s ease, border-radius 0.5s ease, padding 0.5s ease;
+    /* En táctil: priorizar scroll vertical para no activar hovers al deslizar */
+    touch-action: pan-y;
 }
 
 #loading-screen ~ .section-index,
@@ -5978,9 +5995,14 @@ body.records-panel-open #navbar {
     transition: color 0.3s ease, opacity 0.3s ease;
 }
 
-.section-index__item:hover .section-index__name,
+/* Hover solo en dispositivos con cursor real; en táctil evita que el scroll active hovers falsos */
 .section-index__item:focus-visible .section-index__name {
     color: rgba(255, 255, 255, 0.35);
+}
+@media (hover: hover) {
+    .section-index__item:hover .section-index__name {
+        color: rgba(255, 255, 255, 0.35);
+    }
 }
 
 .section-index__item:has(.section-index__dot.is-active) .section-index__name {
@@ -5997,9 +6019,13 @@ body.records-panel-open #navbar {
     flex-shrink: 0;
 }
 
-.section-index__item:hover .section-index__dot:not(.is-active),
 .section-index__item:focus-visible .section-index__dot:not(.is-active) {
     background: rgba(255, 255, 255, 0.25);
+}
+@media (hover: hover) {
+    .section-index__item:hover .section-index__dot:not(.is-active) {
+        background: rgba(255, 255, 255, 0.25);
+    }
 }
 
 .section-index__item:focus-visible {
@@ -6016,10 +6042,15 @@ body.records-panel-open #navbar {
     box-shadow: 0 0 12px rgba(204, 136, 0, 0.35);
 }
 
-.section-index__item:hover .section-index__dot.is-active,
 .section-index__item:focus-visible .section-index__dot.is-active {
     opacity: 1;
     box-shadow: 0 0 16px rgba(204, 136, 0, 0.45);
+}
+@media (hover: hover) {
+    .section-index__item:hover .section-index__dot.is-active {
+        opacity: 1;
+        box-shadow: 0 0 16px rgba(204, 136, 0, 0.45);
+    }
 }
 
 @media (max-width: 768px) {
@@ -6034,9 +6065,13 @@ body.records-panel-open #navbar {
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
     }
 
-    .section-index__item:hover .section-index__name,
     .section-index__item:focus-visible .section-index__name {
         color: rgba(255, 255, 255, 0.4);
+    }
+    @media (hover: hover) {
+        .section-index__item:hover .section-index__name {
+            color: rgba(255, 255, 255, 0.4);
+        }
     }
 
     .section-index__item:has(.section-index__dot.is-active) .section-index__name {
@@ -7232,12 +7267,14 @@ body {
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
 }
-.session-card.active .session-card-listen-btn:hover,
-.session-card .session-card-listen-btn:hover {
-    background-color: rgba(255, 255, 255, 0.06) !important;
-    border-color: rgba(255, 255, 255, 0.14) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
-    transform: translateY(-10px) !important;
+@media (hover: hover) {
+    .session-card.active .session-card-listen-btn:hover,
+    .session-card .session-card-listen-btn:hover {
+        background-color: rgba(255, 255, 255, 0.06) !important;
+        border-color: rgba(255, 255, 255, 0.14) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+        transform: translateY(-10px) !important;
+    }
 }
 .session-card .session-card-listen-btn-icon,
 .session-card .session-card-listen-btn-text {
