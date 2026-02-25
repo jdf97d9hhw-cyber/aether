@@ -1055,7 +1055,6 @@ function updateSessionCardsState(shouldScroll = true) {
                     <img src="${track.cover || track.bgImage}" alt="" loading="lazy" decoding="async" />
                 </div>
                 <div class="sessions-list-item-text">
-                    ${track.isNew ? `<div class="session-new-badge-line">${isEnglishPage() ? 'New' : 'Nuevo'}</div>` : ''}
                     <div class="sessions-list-item-title">${t(track, 'title')}</div>
                     <div class="sessions-list-item-artist">${t(track, 'artist')}${dateLabel ? ` · ${dateLabel}` : ''}</div>
                 </div>
@@ -1118,7 +1117,6 @@ function updateSessionCardsState(shouldScroll = true) {
                             <img src="${track.cover || track.bgImage}" alt="" loading="lazy" decoding="async" />
                         </div>
                         <div class="sessions-list-item-text">
-                            ${track.isNew ? `<div class="session-new-badge-line">${isEnglishPage() ? 'New' : 'Nuevo'}</div>` : ''}
                             <div class="sessions-list-item-title">${t(track, 'title')}</div>
                             <div class="sessions-list-item-artist">${t(track, 'artist')}${dateLabel ? ` · ${dateLabel}` : ''}</div>
                         </div>
