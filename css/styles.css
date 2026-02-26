@@ -2733,10 +2733,11 @@ html[lang="en"] .records-placa-hint-es { display: none; }
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     padding: 3px 8px;
     min-width: 28px;
-    background: rgba(255, 255, 255, 0.015);
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: transparent;
+    border: 1px solid transparent;
     border-radius: 999px;
     color: rgba(255, 255, 255, 0.26);
     text-decoration: none;
@@ -2745,23 +2746,31 @@ html[lang="en"] .records-placa-hint-es { display: none; }
     transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
+/* Separador ES / EN (solo между двумя языками, не перед VU-кнопкой) */
+.lang-switch .lang-btn + .lang-btn::before {
+    content: "/";
+    margin-right: 4px;
+    color: rgba(255, 255, 255, 0.34);
+    font-weight: 400;
+}
+
 .lang-btn--active {
     color: rgba(255, 255, 255, 0.45);
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.07);
+    background: transparent;
+    border-color: transparent;
     cursor: default;
 }
 
 @media (hover: hover) {
     a.lang-btn:hover {
         color: rgba(255, 255, 255, 0.4);
-        border-color: rgba(255, 255, 255, 0.06);
-        background: rgba(255, 255, 255, 0.03);
+        border-color: transparent;
+        background: transparent;
     }
 }
 
 a.lang-btn:active {
-    background: rgba(255, 255, 255, 0.035);
+    background: transparent;
 }
 
 @keyframes likePulse {
@@ -7826,22 +7835,32 @@ body.ritual-vu-open {
 }
 
 @media (max-width: 767px) {
+    /* Subir panel superior en móvil (logo + idioma + VU) */
+    #navbar {
+        padding-top: 6px !important;
+        padding-bottom: 6px !important;
+    }
+
     /* NAV móvil: controles cómodos para dedo (tap target ~40-44px) */
     .lang-switch {
         font-size: 11px;
-        gap: 6px;
+        gap: 0 !important;
     }
     .lang-switch .lang-btn {
         min-height: 40px;
-        min-width: 40px;
-        padding: 8px 12px;
-        background: rgba(255, 255, 255, 0.006);
-        border-color: rgba(255, 255, 255, 0.02);
+        min-width: 26px;
+        padding: 8px 2px;
+        background: transparent;
+        border-color: transparent;
         color: rgba(255, 255, 255, 0.2);
     }
+    /* Mantener distancia cómoda solo con el VU */
+    .lang-switch .ritual-vu-nav-btn--mobile {
+        margin-left: 8px;
+    }
     .lang-switch .lang-btn--active {
-        background: rgba(255, 255, 255, 0.012);
-        border-color: rgba(255, 255, 255, 0.035);
+        background: transparent;
+        border-color: transparent;
         color: rgba(255, 255, 255, 0.32);
     }
 
@@ -7871,6 +7890,12 @@ body.ritual-vu-open {
     #btnSubir svg {
         width: 18px;
         height: 18px;
+    }
+
+    /* Subir también la fila de links pequeños (section-index) */
+    .section-index {
+        top: calc(var(--navbar-height, 56px) - 8px);
+        padding-top: 2px;
     }
 
     .ritual-vu-stage {
