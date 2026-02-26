@@ -340,11 +340,40 @@ body {
     background: transparent;
 }
 
-#navbar.nav-scrolled {
-    /* Restaurar cristal también para logo + idioma al hacer scroll */
-    background: rgba(22, 18, 14, 0.72) !important;
-    -webkit-backdrop-filter: blur(10px) saturate(120%);
-    backdrop-filter: blur(10px) saturate(120%);
+
+
+/* Marco sutil para el bloque logo + idiomas (estilo cristal cálido) */
+.navbar-shell {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 248, 238, 0.12);
+    background: rgba(18, 14, 11, 0.28);
+    -webkit-backdrop-filter: blur(8px) saturate(118%);
+    backdrop-filter: blur(8px) saturate(118%);
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 248, 238, 0.02),
+        0 8px 24px rgba(0, 0, 0, 0.22);
+    padding: 8px 10px;
+    transition: background 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease, backdrop-filter 0.45s ease;
+}
+
+#navbar.nav-scrolled .navbar-shell {
+    border-color: rgba(255, 240, 220, 0.18);
+    background: rgba(20, 16, 12, 0.56);
+    -webkit-backdrop-filter: blur(14px) saturate(130%) !important;
+    backdrop-filter: blur(14px) saturate(130%) !important;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 248, 238, 0.03),
+        0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 767px) {
+    .navbar-shell {
+        border-radius: 18px;
+        padding: 6px 8px;
+    }
 }
 
 /* Contenedor de los enlaces (Visión, Sesiones, etc.): fondo con esquinas redondeadas abajo cuando hay scroll */
@@ -5756,7 +5785,7 @@ body.records-panel-open #navbar {
     position: fixed;
     left: 0;
     right: 0;
-    top: calc(var(--navbar-height, 56px) - 2px);
+    top: calc(var(--navbar-height, 56px) - 14px);
     z-index: 55;
     pointer-events: none;
     padding-top: 6px;
