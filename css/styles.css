@@ -681,12 +681,14 @@ html.styles-loaded #loading-screen {
         box-shadow: none !important;
     }
 
-    /* SESIONES: placa sin imagen de fondo, solo cristal suave */
+    /* SESIONES: mantener textura cosmic también en lite-mode, pero ligera */
     html.lite-mode .sessions-plaque .sessions-plaque-bg {
         background:
-            linear-gradient(180deg, rgba(10, 7, 5, 0.9) 0%, rgba(8, 5, 4, 0.96) 100%) !important;
-        -webkit-filter: none !important;
-        filter: none !important;
+            linear-gradient(180deg, rgba(10, 7, 5, 0.56) 0%, rgba(8, 5, 4, 0.64) 100%),
+            url('../img/cosmic_background.webp') center center / cover no-repeat !important;
+        background-blend-mode: normal !important;
+        -webkit-filter: brightness(1.08) contrast(1.06) !important;
+        filter: brightness(1.08) contrast(1.06) !important;
         transform: none !important;
         box-shadow: 0 10px 32px rgba(0, 0, 0, 0.55) !important;
     }
@@ -2758,15 +2760,15 @@ a.lang-btn:active {
     opacity: 1;
     /* Capas de color: profundidad + halo cálido */
     background:
-        radial-gradient(140% 120% at 50% -10%, rgba(220, 160, 90, 0.16) 0%, rgba(220, 160, 90, 0) 55%),
-        radial-gradient(120% 160% at 8% 110%, rgba(220, 140, 80, 0.22) 0%, rgba(220, 140, 80, 0) 60%),
-        radial-gradient(120% 160% at 92% 110%, rgba(255, 210, 150, 0.14) 0%, rgba(255, 210, 150, 0) 60%),
+        radial-gradient(140% 120% at 50% -10%, rgba(220, 160, 90, 0.1) 0%, rgba(220, 160, 90, 0) 55%),
+        radial-gradient(120% 160% at 8% 110%, rgba(220, 140, 80, 0.14) 0%, rgba(220, 140, 80, 0) 60%),
+        radial-gradient(120% 160% at 92% 110%, rgba(255, 210, 150, 0.1) 0%, rgba(255, 210, 150, 0) 60%),
         linear-gradient(180deg,
-            rgba(18, 13, 9, 0.9) 0%,
-            rgba(10, 7, 5, 0.92) 40%,
-            rgba(6, 4, 3, 0.94) 100%),
+            rgba(18, 13, 9, 0.5) 0%,
+            rgba(10, 7, 5, 0.56) 40%,
+            rgba(6, 4, 3, 0.62) 100%),
         url('../img/cosmic_background.webp') center center / cover no-repeat;
-    background-blend-mode: normal, normal, normal, normal, overlay;
+    background-blend-mode: normal, normal, normal, normal, normal;
     -webkit-backdrop-filter: blur(18px) saturate(145%);
     backdrop-filter: blur(18px) saturate(145%);
     box-shadow:
@@ -4216,11 +4218,11 @@ body:not(.player-expanded-open) .player-collapsed-handle .player-expanded-handle
     opacity: 1;
     background:
         linear-gradient(180deg,
-            rgba(24, 18, 14, 0.72) 0%,
-            rgba(16, 12, 10, 0.82) 50%,
-            rgba(13, 10, 8, 0.78) 100%),
+            rgba(24, 18, 14, 0.44) 0%,
+            rgba(16, 12, 10, 0.52) 50%,
+            rgba(13, 10, 8, 0.48) 100%),
         url('../img/cosmic_background.webp') center center / cover no-repeat;
-    background-blend-mode: normal, soft-light;
+    background-blend-mode: normal, normal;
     -webkit-backdrop-filter: blur(16px) saturate(135%);
     backdrop-filter: blur(16px) saturate(135%);
     box-shadow:
@@ -5945,6 +5947,7 @@ body.records-panel-open #navbar {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     opacity: 0;
     transform: scale(0.97);
     transition: opacity 2s ease-out 0.6s, transform 2s cubic-bezier(0.2, 0.98, 0.4, 1) 0.6s;
@@ -5960,6 +5963,7 @@ body.records-panel-open #navbar {
     display: flex;
     align-items: center;
     justify-content: center;
+    align-self: center;
 }
 
 .ritual-logo-glow {
@@ -5998,13 +6002,18 @@ body.records-panel-open #navbar {
 }
 
 .ritual-word {
-    margin-top: 1.6rem;
+    margin-top: 1.4rem;
+    display: inline-block;
+    align-self: center;
     font-family: 'Playfair Display', serif;
     font-size: clamp(0.8rem, 3.2vw, 1rem);
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0.45em;
     text-transform: uppercase;
-    color: rgba(255, 252, 248, 0.88);
+    line-height: 1.1;
+    padding-left: 0.45em;
+    margin-right: -0.45em;
+    color: rgba(255, 252, 248, 0.7);
     text-shadow: 0 0 28px rgba(204, 160, 80, 0.35),
                  0 0 12px rgba(255, 235, 210, 0.2),
                  0 1px 2px rgba(0, 0, 0, 0.3);

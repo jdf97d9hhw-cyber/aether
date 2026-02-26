@@ -356,6 +356,8 @@
             transition: opacity 0.22s ease, transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
             display: flex;
             align-items: center;
+            justify-content: center;
+            min-width: 52px;
             gap: 0.35rem;
             pointer-events: auto;
             font-size: 0.6875rem;
@@ -637,11 +639,10 @@
             outline: none;
             -webkit-tap-highlight-color: transparent;
             user-select: none;
-            padding: 6px 14px;
-            width: 108px;
+            padding: 6px 10px;
             background: rgba(8, 8, 8, 0.18);
             backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 182, 193, 0.155);
             border-radius: 999px;
             opacity: 0.5;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
@@ -649,11 +650,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            min-width: 52px;
             gap: 0.35rem;
             pointer-events: auto;
             font-size: 0.6875rem;
             font-weight: 500;
-            color: rgba(255, 255, 255, 0.65);
+            color: rgba(255, 255, 255, 0.78);
         }
 
         .comments-toggle:active {
@@ -664,7 +666,7 @@
             .comments-toggle:hover {
                 opacity: 0.75;
                 transform: translateY(-0.5px);
-                border-color: rgba(255, 255, 255, 0.24);
+                border-color: rgba(255, 182, 193, 0.5);
                 background: rgba(8, 8, 8, 0.24);
             }
         }
@@ -672,16 +674,18 @@
         .comments-toggle i,
         .comments-toggle svg,
         .comments-toggle .comments-icon {
-            width: 16px !important;
-            height: 16px !important;
-            min-width: 16px;
-            min-height: 16px;
+            width: 11px !important;
+            height: 11px !important;
+            min-width: 11px;
+            min-height: 11px;
             flex-shrink: 0;
         }
 
-        .comments-toggle span {
+        .comments-toggle .comment-count {
             font-size: 0.6875rem;
             line-height: 1;
+            font-weight: 500;
+            font-variant-numeric: tabular-nums;
         }
 
         .comments-header {
@@ -830,6 +834,7 @@
             cursor: pointer;
             transition: all 0.2s ease;
             align-self: flex-end;
+            position: relative;
         }
 
         .comment-submit:hover {
@@ -841,22 +846,57 @@
             transform: scale(0.98);
         }
 
+        .comment-submit.is-loading {
+            cursor: wait;
+            pointer-events: none;
+            opacity: 0.9;
+            padding-right: 2.1rem;
+        }
+
+        .comment-submit.is-loading::before {
+            content: 'Publicando...';
+        }
+
+        .comment-submit.is-loading span {
+            opacity: 0;
+        }
+
+        .comment-submit.is-loading::after {
+            content: '';
+            position: absolute;
+            width: 0.7rem;
+            height: 0.7rem;
+            right: 0.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 1.5px solid rgba(255, 255, 255, 0.28);
+            border-top-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            animation: commentSubmitSpin 0.75s linear infinite;
+        }
+
+        @keyframes commentSubmitSpin {
+            to {
+                transform: translateY(-50%) rotate(360deg);
+            }
+        }
+
         @media (min-width: 768px) {
             .comments-section {
                 padding: 2rem 2rem 2.5rem;
             }
             .comments-toggle {
                 bottom: calc(2.5rem + 2.5rem);
-                padding: 6px 14px;
+                padding: 6px 10px;
                 font-size: 0.6875rem;
             }
             .comments-toggle i,
             .comments-toggle svg,
             .comments-toggle .comments-icon {
-                width: 16px !important;
-                height: 16px !important;
+                width: 11px !important;
+                height: 11px !important;
             }
-            .comments-toggle span {
+            .comments-toggle .comment-count {
                 font-size: 0.6875rem;
             }
         }
@@ -1015,9 +1055,9 @@
                 </div>
 
                 <!-- Botón para abrir comentarios -->
-                <button class="comments-toggle" onclick="toggleComments('short6', event)" aria-label="Ver comentarios">
+                <button class="comments-toggle" data-video-id="short6" onclick="toggleComments('short6', event)" aria-label="Ver comentarios">
                     <i data-lucide="message-circle" class="comments-icon"></i>
-                    <span>Comentarios</span>
+                    <span class="comment-count"><span class="comment-count-num">0</span></span>
                 </button>
 
                 <!-- Sección de comentarios -->
@@ -1034,7 +1074,7 @@
                     <form class="comment-form" onsubmit="addComment('short6', event)">
                         <input type="text" class="comment-input" placeholder="Tu nombre" id="comment-name-short6" required>
                         <textarea class="comment-input" rows="2" placeholder="Escribe tu comentario..." id="comment-text-short6" required></textarea>
-                        <button type="submit" class="comment-submit">Publicar</button>
+                        <button type="submit" class="comment-submit"><span>Publicar</span></button>
                     </form>
                 </div>
             </div>
@@ -1133,9 +1173,9 @@
                 </div>
 
                 <!-- Botón para abrir comentarios -->
-                <button class="comments-toggle" onclick="toggleComments('short1', event)" aria-label="Ver comentarios">
+                <button class="comments-toggle" data-video-id="short1" onclick="toggleComments('short1', event)" aria-label="Ver comentarios">
                     <i data-lucide="message-circle" class="comments-icon"></i>
-                    <span>Comentarios</span>
+                    <span class="comment-count"><span class="comment-count-num">0</span></span>
                 </button>
 
                 <!-- Sección de comentarios -->
@@ -1152,7 +1192,7 @@
                     <form class="comment-form" onsubmit="addComment('short1', event)">
                         <input type="text" class="comment-input" placeholder="Tu nombre" id="comment-name-short1" required>
                         <textarea class="comment-input" rows="2" placeholder="Escribe tu comentario..." id="comment-text-short1" required></textarea>
-                        <button type="submit" class="comment-submit">Publicar</button>
+                        <button type="submit" class="comment-submit"><span>Publicar</span></button>
                     </form>
                 </div>
             </div>
@@ -1242,9 +1282,9 @@
                 </div>
 
                 <!-- Botón para abrir comentarios -->
-                <button class="comments-toggle" onclick="toggleComments('short2', event)" aria-label="Ver comentarios">
+                <button class="comments-toggle" data-video-id="short2" onclick="toggleComments('short2', event)" aria-label="Ver comentarios">
                     <i data-lucide="message-circle" class="comments-icon"></i>
-                    <span>Comentarios</span>
+                    <span class="comment-count"><span class="comment-count-num">0</span></span>
                 </button>
 
                 <!-- Sección de comentarios -->
@@ -1259,7 +1299,7 @@
                     <form class="comment-form" onsubmit="addComment('short2', event)">
                         <input type="text" class="comment-input" placeholder="Tu nombre" id="comment-name-short2" required>
                         <textarea class="comment-input" rows="2" placeholder="Escribe tu comentario..." id="comment-text-short2" required></textarea>
-                        <button type="submit" class="comment-submit">Publicar</button>
+                        <button type="submit" class="comment-submit"><span>Publicar</span></button>
                     </form>
                 </div>
             </div>
@@ -1364,9 +1404,9 @@
                 </div>
 
                 <!-- Botón para abrir comentarios -->
-                <button class="comments-toggle" onclick="toggleComments('short3', event)" aria-label="Ver comentarios">
+                <button class="comments-toggle" data-video-id="short3" onclick="toggleComments('short3', event)" aria-label="Ver comentarios">
                     <i data-lucide="message-circle" class="comments-icon"></i>
-                    <span>Comentarios</span>
+                    <span class="comment-count"><span class="comment-count-num">0</span></span>
                 </button>
 
                 <!-- Sección de comentarios -->
@@ -1381,7 +1421,7 @@
                     <form class="comment-form" onsubmit="addComment('short3', event)">
                         <input type="text" class="comment-input" placeholder="Tu nombre" id="comment-name-short3" required>
                         <textarea class="comment-input" rows="2" placeholder="Escribe tu comentario..." id="comment-text-short3" required></textarea>
-                        <button type="submit" class="comment-submit">Publicar</button>
+                        <button type="submit" class="comment-submit"><span>Publicar</span></button>
                     </form>
                 </div>
             </div>
@@ -1486,9 +1526,9 @@
                 </div>
 
                 <!-- Botón para abrir comentarios -->
-                <button class="comments-toggle" onclick="toggleComments('short4', event)" aria-label="Ver comentarios">
+                <button class="comments-toggle" data-video-id="short4" onclick="toggleComments('short4', event)" aria-label="Ver comentarios">
                     <i data-lucide="message-circle" class="comments-icon"></i>
-                    <span>Comentarios</span>
+                    <span class="comment-count"><span class="comment-count-num">0</span></span>
                 </button>
 
                 <!-- Sección de comentarios -->
@@ -1503,7 +1543,7 @@
                     <form class="comment-form" onsubmit="addComment('short4', event)">
                         <input type="text" class="comment-input" placeholder="Tu nombre" id="comment-name-short4" required>
                         <textarea class="comment-input" rows="2" placeholder="Escribe tu comentario..." id="comment-text-short4" required></textarea>
-                        <button type="submit" class="comment-submit">Publicar</button>
+                        <button type="submit" class="comment-submit"><span>Publicar</span></button>
                     </form>
                 </div>
             </div>
@@ -1608,9 +1648,9 @@
                 </div>
 
                 <!-- Botón para abrir comentarios -->
-                <button class="comments-toggle" onclick="toggleComments('short5', event)" aria-label="Ver comentarios">
+                <button class="comments-toggle" data-video-id="short5" onclick="toggleComments('short5', event)" aria-label="Ver comentarios">
                     <i data-lucide="message-circle" class="comments-icon"></i>
-                    <span>Comentarios</span>
+                    <span class="comment-count"><span class="comment-count-num">0</span></span>
                 </button>
 
                 <!-- Sección de comentarios -->
@@ -1625,7 +1665,7 @@
                     <form class="comment-form" onsubmit="addComment('short5', event)">
                         <input type="text" class="comment-input" placeholder="Tu nombre" id="comment-name-short5" required>
                         <textarea class="comment-input" rows="2" placeholder="Escribe tu comentario..." id="comment-text-short5" required></textarea>
-                        <button type="submit" class="comment-submit">Publicar</button>
+                        <button type="submit" class="comment-submit"><span>Publicar</span></button>
                     </form>
                 </div>
             </div>
@@ -2055,10 +2095,17 @@
         }
     }
 
+    function updateCommentsCount(videoId, totalComments) {
+        const countNumEl = document.querySelector(`.comments-toggle[data-video-id="${videoId}"] .comment-count-num`);
+        if (!countNumEl) return;
+        countNumEl.textContent = String(totalComments);
+    }
+
     function renderComments(videoId) {
         const commentsList = document.getElementById(`comments-list-${videoId}`);
         if (!commentsList) return;
         const comments = getComments(videoId);
+        updateCommentsCount(videoId, comments.length);
         const myIds = getMyCommentIds(videoId);
         commentsList.innerHTML = '';
         if (comments.length === 0) {
@@ -2106,37 +2153,55 @@
         if (typeof lucide !== 'undefined') lucide.createIcons();
     };
 
-    window.addComment = function(videoId, event) {
+    window.addComment = async function(videoId, event) {
         event.preventDefault();
+        const form = event.target;
+        const submitBtn = form ? form.querySelector('.comment-submit') : null;
+        if (submitBtn && submitBtn.classList.contains('is-loading')) return;
+
         const nameInput = document.getElementById(`comment-name-${videoId}`);
         const textInput = document.getElementById(`comment-text-${videoId}`);
         if (!nameInput || !textInput) return;
         const name = nameInput.value.trim();
         const text = textInput.value.trim();
         if (!name || !text) return;
-        
-        let savedComments = [];
+
+        if (submitBtn) submitBtn.classList.add('is-loading');
+        nameInput.disabled = true;
+        textInput.disabled = true;
+
         try {
-            const stored = localStorage.getItem(`aether-shorts-comments-${videoId}`);
-            if (stored) {
-                savedComments = JSON.parse(stored);
+            // Небольшая имитация отправки для визуального фидбека
+            await new Promise(resolve => setTimeout(resolve, 550));
+
+            let savedComments = [];
+            try {
+                const stored = localStorage.getItem(`aether-shorts-comments-${videoId}`);
+                if (stored) {
+                    savedComments = JSON.parse(stored);
+                }
+            } catch (e) {
+                console.warn('Error al leer comentarios:', e);
             }
-        } catch (e) {
-            console.warn('Error al leer comentarios:', e);
+
+            const id = 'id_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
+            savedComments.push({ id, name, text });
+            saveComments(videoId, savedComments);
+
+            const myIds = getMyCommentIds(videoId);
+            myIds.push(id);
+            saveMyCommentIds(videoId, myIds);
+
+            nameInput.value = '';
+            textInput.value = '';
+            renderComments(videoId);
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        } finally {
+            if (submitBtn) submitBtn.classList.remove('is-loading');
+            nameInput.disabled = false;
+            textInput.disabled = false;
+            nameInput.focus();
         }
-        
-        const id = 'id_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
-        savedComments.push({ id, name, text });
-        saveComments(videoId, savedComments);
-        
-        const myIds = getMyCommentIds(videoId);
-        myIds.push(id);
-        saveMyCommentIds(videoId, myIds);
-        
-        nameInput.value = '';
-        textInput.value = '';
-        renderComments(videoId);
-        if (typeof lucide !== 'undefined') lucide.createIcons();
     };
 
     window.deleteComment = function(btn, event) {
