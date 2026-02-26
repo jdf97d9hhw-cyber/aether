@@ -2086,7 +2086,7 @@ html[lang="en"] .records-placa-hint-es { display: none; }
 /* --- TARJETAS DE SESIÓN (efecto cristal como placas) --- */
 .session-card {
     flex: 0 0 auto !important;
-    width: 280px;
+    width: 300px;
     height: 460px;
     scroll-snap-align: none; /* Управляется через JS */
     padding: 30px;
