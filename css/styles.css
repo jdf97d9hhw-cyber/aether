@@ -376,18 +376,25 @@ body {
     }
 }
 
-/* iPhone Safari: evitar blur anidado (navbar + shell) y forzar blur visible en shell */
+/* iPhone Safari: blur robusto en el contenedor principal (evita fallos de capas anidadas) */
 @supports (-webkit-touch-callout: none) {
+    #navbar {
+        /* Safari puede perder backdrop-filter si el padre tiene filter/transform */
+        filter: none !important;
+        transform: translateY(0) !important;
+    }
+
     #navbar.nav-scrolled {
-        background: transparent !important;
-        -webkit-backdrop-filter: none !important;
-        backdrop-filter: none !important;
+        background: rgba(18, 14, 11, 0.52) !important;
+        -webkit-backdrop-filter: blur(16px) saturate(138%) !important;
+        backdrop-filter: blur(16px) saturate(138%) !important;
     }
 
     #navbar.nav-scrolled .navbar-shell {
-        background: rgba(20, 16, 12, 0.5) !important;
-        -webkit-backdrop-filter: blur(16px) saturate(138%) !important;
-        backdrop-filter: blur(16px) saturate(138%) !important;
+        background: rgba(20, 16, 12, 0.38) !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+        border-color: rgba(255, 240, 220, 0.2) !important;
     }
 }
 
