@@ -355,7 +355,7 @@ body {
     box-shadow:
         inset 0 0 0 1px rgba(255, 248, 238, 0.02),
         0 8px 24px rgba(0, 0, 0, 0.22);
-    padding: 8px 10px;
+    padding: 8px 14px;
     transition: background 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease, backdrop-filter 0.45s ease;
 }
 
@@ -372,7 +372,22 @@ body {
 @media (max-width: 767px) {
     .navbar-shell {
         border-radius: 18px;
-        padding: 6px 8px;
+        padding: 6px 12px;
+    }
+}
+
+/* iPhone Safari: evitar blur anidado (navbar + shell) y forzar blur visible en shell */
+@supports (-webkit-touch-callout: none) {
+    #navbar.nav-scrolled {
+        background: transparent !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+    }
+
+    #navbar.nav-scrolled .navbar-shell {
+        background: rgba(20, 16, 12, 0.5) !important;
+        -webkit-backdrop-filter: blur(16px) saturate(138%) !important;
+        backdrop-filter: blur(16px) saturate(138%) !important;
     }
 }
 
