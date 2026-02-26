@@ -2411,12 +2411,12 @@ html[lang="en"] .records-placa-hint-es { display: none; }
 @media (max-width: 380px) {
     .session-card { width: 75vw; height: 400px; }
     .session-card.active { height: 416px; }
-    .card-vinyl-container { width: 182px; height: 182px; }
-    .session-card.active .card-vinyl-container { width: 198px; height: 198px; }
+    .card-vinyl-container { width: 200px; height: 200px; }
+    .session-card.active .card-vinyl-container { width: 218px; height: 218px; }
 }
 @media (max-width: 767px) and (min-width: 381px) {
-    .session-card .card-vinyl-container { width: 186px; height: 186px; }
-    .session-card.active .card-vinyl-container { width: 200px; height: 200px; }
+    .session-card .card-vinyl-container { width: 205px; height: 205px; }
+    .session-card.active .card-vinyl-container { width: 220px; height: 220px; }
 }
 
 @media (min-width: 768px) {
@@ -2748,7 +2748,7 @@ a.lang-btn:active {
     transition: box-shadow 0.4s ease, backdrop-filter 0.4s ease;
 }
 
-/* Placa de sesiones: efecto cristal (como panel suscribirse), sin imagen de fondo */
+/* Placa de sesiones: efecto cristal con fondo más rico (eco cálido del panel superior) */
 .sessions-plaque .sessions-plaque-bg {
     position: absolute;
     inset: 0;
@@ -2756,17 +2756,22 @@ a.lang-btn:active {
     z-index: 0;
     pointer-events: none;
     opacity: 1;
-    background: linear-gradient(180deg,
-        rgba(28, 22, 16, 0.36) 0%,
-        rgba(20, 16, 12, 0.5) 50%,
-        rgba(22, 18, 14, 0.44) 100%);
-    -webkit-backdrop-filter: blur(16px) saturate(135%);
-    backdrop-filter: blur(16px) saturate(135%);
+    /* Capas de color: profundidad + halo cálido */
+    background:
+        radial-gradient(140% 120% at 50% -10%, rgba(220, 160, 90, 0.16) 0%, rgba(220, 160, 90, 0) 55%),
+        radial-gradient(120% 160% at 8% 110%, rgba(220, 140, 80, 0.22) 0%, rgba(220, 140, 80, 0) 60%),
+        radial-gradient(120% 160% at 92% 110%, rgba(255, 210, 150, 0.14) 0%, rgba(255, 210, 150, 0) 60%),
+        linear-gradient(180deg,
+            rgba(18, 13, 9, 0.98) 0%,
+            rgba(10, 7, 5, 0.99) 40%,
+            rgba(6, 4, 3, 1) 100%);
+    -webkit-backdrop-filter: blur(18px) saturate(145%);
+    backdrop-filter: blur(18px) saturate(145%);
     box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        0 1px 0 0 rgba(255, 255, 255, 0.04) inset,
-        inset 0 0 80px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+        0 16px 48px rgba(0, 0, 0, 0.65),
+        0 1px 0 0 rgba(255, 255, 255, 0.05) inset,
+        inset 0 0 80px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.4s ease, backdrop-filter 0.4s ease, background 0.4s ease;
 }
 .sessions-plaque-bg::before,
 .sessions-plaque-bg::after {
@@ -3880,8 +3885,8 @@ a.lang-btn:active {
     bottom: 100%;
     width: 100%;
     --player-expand-top-safe: calc(var(--navbar-height, 72px) + 52px);
-    height: calc(100vh - var(--player-expand-top-safe) - 50px);
-    max-height: calc(100vh - 95px);
+    height: calc(100vh - var(--player-expand-top-safe) - 20px);
+    max-height: calc(100vh - 65px);
     z-index: 1;
 }
 /* Móvil: panel de sesiones solo hasta la barrita de links (section-index); no invadir logo/idiomas */
@@ -3889,8 +3894,8 @@ a.lang-btn:active {
     .player-expanded-overlay {
         /* Margen superior fijo (navbar + section-index + reproductor). El panel no debe subir al logo/selector. */
         --panel-top-mobile: 240px;
-        height: calc(100vh - var(--panel-top-mobile));
-        max-height: calc(100vh - var(--panel-top-mobile));
+        height: calc(100vh - var(--panel-top-mobile) + 30px);
+        max-height: calc(100vh - var(--panel-top-mobile) + 30px);
         --player-expand-top-safe: var(--panel-top-mobile);
     }
 }
@@ -4202,15 +4207,18 @@ body:not(.player-expanded-open) .player-collapsed-handle .player-expanded-handle
     letter-spacing: 0.25em !important;
     margin-bottom: 0.5rem !important;
 }
-/* Placa expandida: efecto cristal (como suscribirse), sin imagen de fondo */
+/* Placa expandida: efecto cristal + textura cósmica muy sutil */
 .player-expanded-overlay .sessions-plaque-expanded .sessions-plaque-bg {
     border-radius: inherit;
     top: 0;
     opacity: 1;
-    background: linear-gradient(180deg,
-        rgba(28, 22, 16, 0.36) 0%,
-        rgba(20, 16, 12, 0.5) 50%,
-        rgba(22, 18, 14, 0.44) 100%);
+    background:
+        linear-gradient(180deg,
+            rgba(24, 18, 14, 0.72) 0%,
+            rgba(16, 12, 10, 0.82) 50%,
+            rgba(13, 10, 8, 0.78) 100%),
+        url('../img/cosmic_background.webp') center center / cover no-repeat;
+    background-blend-mode: normal, soft-light;
     -webkit-backdrop-filter: blur(16px) saturate(135%);
     backdrop-filter: blur(16px) saturate(135%);
     box-shadow:
@@ -4771,9 +4779,23 @@ body.about-panel-open #navbar {
 .about-expanded-overlay .about-plaque .about-manifiesto {
     font-size: 0.85rem;
     line-height: 1.5;
+    color: rgba(255, 246, 236, 0.82);
 }
 .about-expanded-overlay .about-plaque .about-manifiesto p {
     margin-bottom: 0.5rem;
+}
+.about-expanded-overlay .about-plaque [class*="col-span-7"] > div:first-child span {
+    color: rgba(255, 242, 226, 0.78) !important;
+}
+.about-expanded-overlay .about-plaque h2 {
+    color: rgba(255, 252, 246, 0.96);
+}
+.about-expanded-overlay .about-plaque h2 span {
+    color: rgba(255, 244, 232, 0.76) !important;
+}
+.about-expanded-overlay .about-plaque .grid.grid-cols-2 .font-serif {
+    line-height: 1.15;
+    color: rgba(255, 252, 246, 0.96);
 }
 
 /* ========================================== */
@@ -5313,9 +5335,13 @@ html[lang="en"] .records-panel-swipe-hint .records-panel-swipe-hint-es { display
     }
 
     .about-expanded-overlay .about-plaque .grid.grid-cols-2 {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0.75rem;
         padding-bottom: 1.5rem !important;
+    }
+    .about-expanded-overlay .about-plaque .grid.grid-cols-2 .font-serif {
+        font-size: 1.05rem;
+        line-height: 1.2;
     }
 
     .contact-expanded-overlay .record-shelf-card {

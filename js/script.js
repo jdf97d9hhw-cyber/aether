@@ -623,14 +623,12 @@ function renderPlaylist(shouldScroll = true) {
         div.setAttribute('aria-current', isActive ? 'true' : 'false');
         div.setAttribute('aria-label', `${t(track, 'title')} · ${t(track, 'artist')}`);
 
-        // Solo las primeras 3 tarjetas cargan enseguida; el resto lazy (mejora carga inicial)
-        const cardLoading = index <= 2 ? 'eager' : 'lazy';
         // HTML INTERNO (CON IMAGEN DE FONDO + DATOS)
      div.innerHTML = `
             <!-- 1. CAPA DE FONDO -->
             <div class="absolute inset-0 z-0 overflow-hidden rounded-[30px]">
                 <img src="${track.bgImage || track.cover}" alt=""
-                     loading="${cardLoading}" decoding="async"
+                     loading="eager" decoding="async"
                      class="w-full h-full object-cover transition-transform duration-700 ease-out session-card-bg"
                      style="filter: brightness(0.28) saturate(0.84); transform: scale(1.05);">
                 <div class="absolute inset-0 bg-gradient-to-b from-black/58 via-black/30 to-black/56"></div>
@@ -682,7 +680,7 @@ function renderPlaylist(shouldScroll = true) {
 
                         <!-- La Galleta (Imagen central) — círculo perfecto, imagen completa sin recorte -->
                         <div class="vinyl-label-wrap relative w-[92%] aspect-square rounded-full overflow-hidden border border-white/10 z-10 shadow-inner bg-black flex items-center justify-center">
-                            <img src="${track.cover}" alt="${(t(track, 'title') || '')} — ${(t(track, 'artist') || '')}" loading="${cardLoading}" decoding="async"
+                            <img src="${track.cover}" alt="${(t(track, 'title') || '')} — ${(t(track, 'artist') || '')}" loading="eager" decoding="async"
                                  class="vinyl-image w-full h-full object-contain opacity-90" 
                                  style="filter: brightness(0.6) saturate(1.2);"
                                  data-track-index="${index}">
