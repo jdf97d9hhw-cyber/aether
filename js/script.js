@@ -1669,9 +1669,11 @@ if (listenNowBtn) {
             this.lastX = 0;
             this.lastTime = 0;
             this.animationId = null;
+            this.visualFrameId = null;
             this.targetScroll = 0;
             this.currentScroll = 0;
             this.lastCenterCheck = 0; // Для периодической проверки центрирования
+            this.idleSnapTimer = null;
             
             // Spring physics - suave y que centre bien al soltar (sin pasar de largo)
             this.springConfig = {
@@ -1729,6 +1731,10 @@ if (listenNowBtn) {
             // Wheel for desktop
             this.wheelHandler = this.handleWheel.bind(this);
             this.container.addEventListener('wheel', this.wheelHandler, { passive: false });
+            this.scrollHandler = this.handleNativeScroll.bind(this);
+            this.container.addEventListener('scroll', this.scrollHandler, { passive: true });
+            this.resizeHandler = this.handleResize.bind(this);
+            window.addEventListener('resize', this.resizeHandler, { passive: true });
             
             // Keep scroll enabled but control it manually
             this.container.style.scrollBehavior = 'auto';
@@ -1736,9 +1742,7 @@ if (listenNowBtn) {
             
             // Initial card transforms
             this.updateCardTransforms();
-            
-            // Start animation loop
-            this.animate();
+            if (typeof updateCenteredCard === 'function') updateCenteredCard();
         }
         
         cleanup() {
@@ -1755,6 +1759,20 @@ if (listenNowBtn) {
             }
             if (this.wheelHandler) {
                 this.container.removeEventListener('wheel', this.wheelHandler);
+            }
+            if (this.scrollHandler) {
+                this.container.removeEventListener('scroll', this.scrollHandler);
+            }
+            if (this.resizeHandler) {
+                window.removeEventListener('resize', this.resizeHandler);
+            }
+            if (this.idleSnapTimer) {
+                clearTimeout(this.idleSnapTimer);
+                this.idleSnapTimer = null;
+            }
+            if (this.visualFrameId) {
+                cancelAnimationFrame(this.visualFrameId);
+                this.visualFrameId = null;
             }
         }
         
@@ -1775,6 +1793,10 @@ if (listenNowBtn) {
             
             this.container.style.cursor = 'grabbing';
             this.container.style.userSelect = 'none';
+            if (this.idleSnapTimer) {
+                clearTimeout(this.idleSnapTimer);
+                this.idleSnapTimer = null;
+            }
             
             if (!e.touches) {
                 e.preventDefault();
@@ -1828,6 +1850,32 @@ if (listenNowBtn) {
             if (!e.touches) {
                 e.preventDefault();
             }
+        }
+
+        queueVisualUpdate(updateCentered = true) {
+            if (this.visualFrameId) return;
+            this.visualFrameId = requestAnimationFrame(() => {
+                this.visualFrameId = null;
+                this.updateCardTransforms();
+                if (updateCentered && typeof updateCenteredCard === 'function') {
+                    updateCenteredCard();
+                }
+            });
+        }
+
+        handleNativeScroll() {
+            if (this.isDragging || this.animationId) return;
+            this.currentScroll = this.container.scrollLeft;
+            this.targetScroll = this.currentScroll;
+            this.queueVisualUpdate(true);
+            if (this.idleSnapTimer) clearTimeout(this.idleSnapTimer);
+            this.idleSnapTimer = setTimeout(() => {
+                this.ensureCenteredSmooth();
+            }, 140);
+        }
+
+        handleResize() {
+            this.queueVisualUpdate(true);
         }
         
         handleEnd(e) {
@@ -1996,10 +2044,7 @@ if (listenNowBtn) {
                 
                 this.container.scrollLeft = current;
                 this.currentScroll = current;
-                this.updateCardTransforms();
-                if (typeof updateCenteredCard === 'function') {
-                    updateCenteredCard();
-                }
+                this.queueVisualUpdate(true);
                 
                 // Condición de parada más suave - permite que llegue al centro naturalmente
                 const nearTarget = Math.abs(distance) < 0.5;
@@ -2013,10 +2058,7 @@ if (listenNowBtn) {
                     this.container.scrollLeft = target;
                     this.currentScroll = target;
                     this.targetScroll = target;
-                    this.updateCardTransforms();
-                    if (typeof updateCenteredCard === 'function') {
-                        updateCenteredCard();
-                    }
+                    this.queueVisualUpdate(true);
                     this.animationId = null;
                     this.velocity = 0;
                     
@@ -2038,12 +2080,6 @@ if (listenNowBtn) {
             const edgeThreshold = 84; // Entrada/salida más gradual del stretch
             
             this.cards.forEach((card, index) => {
-                const cardRect = card.getBoundingClientRect();
-                const containerRect = this.container.getBoundingClientRect();
-                const cardCenter = cardRect.left + cardRect.width / 2 - containerRect.left;
-                const containerCenter = containerRect.width / 2;
-                const distance = cardCenter - containerCenter;
-                
                 // Stretch effect when dragging near edges - улучшенная формула
                 let targetScaleX = 1;
                 let targetScaleY = 1;
@@ -2142,27 +2178,25 @@ if (listenNowBtn) {
                 `;
                 const cardOpacity = Math.max(opacity, 0.7);
                 card.style.zIndex = zIndex;
-                const likeBtn = card.querySelector('.like-btn');
                 // Móvil y desktop: opacidad en fondo y contenido, no en la tarjeta; botón like siempre misma opacidad (activa o no).
                 card.style.opacity = '';
-                const opacityTransition = 'opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
                 const likeOpacity = window.innerWidth <= 768 ? '0.42' : '0.5';
                 for (let i = 0; i < card.children.length; i++) {
                     const child = card.children[i];
                     if (child.classList && child.classList.contains('like-btn')) {
-                        child.style.opacity = likeOpacity;
-                        child.style.transition = opacityTransition;
+                        if (child.style.opacity !== likeOpacity) child.style.opacity = likeOpacity;
                     } else {
-                        child.style.opacity = String(cardOpacity);
-                        child.style.transition = opacityTransition;
+                        const childOpacity = String(cardOpacity);
+                        if (child.style.opacity !== childOpacity) child.style.opacity = childOpacity;
                     }
                 }
                 
                 // Transiciones suaves (la opacidad está en los hijos)
-                if (!this.isDragging && !this.animationId) {
-                    card.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
-                } else {
-                    card.style.transition = 'none';
+                const cardTransition = (!this.isDragging && !this.animationId)
+                    ? 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)'
+                    : 'none';
+                if (card.style.transition !== cardTransition) {
+                    card.style.transition = cardTransition;
                 }
             });
         }
@@ -2188,21 +2222,6 @@ if (listenNowBtn) {
             });
             
             return nearestIndex;
-        }
-        
-        animate() {
-            if (!this.isDragging && !this.animationId) {
-                this.updateCardTransforms();
-                
-                // Verificación periódica del efecto imán (cada ~1 segundo)
-                if (!this.lastCenterCheck || Date.now() - this.lastCenterCheck > 1500) {
-                    this.ensureCentered();
-                    this.lastCenterCheck = Date.now();
-                }
-            }
-            if (this.container && this.container.parentElement) {
-                requestAnimationFrame(() => this.animate());
-            }
         }
         
         ensureCenteredSmooth() {

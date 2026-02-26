@@ -2240,15 +2240,29 @@ html[lang="en"] .records-placa-hint-es { display: none; }
         display: none !important;
     }
     .session-card {
+        /* Mobile perf: lighter glass + fewer expensive transitions */
+        -webkit-backdrop-filter: blur(9px) saturate(106%) !important;
+        backdrop-filter: blur(9px) saturate(106%) !important;
+        filter: brightness(1.2) saturate(1) !important;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22) !important;
         clip-path: inset(0 round 30px);
         border: 1px solid rgba(255, 252, 248, 0.03);
+        transition: transform 0.38s cubic-bezier(0.23, 1, 0.32, 1),
+                    opacity 0.38s cubic-bezier(0.23, 1, 0.32, 1) !important;
     }
     .session-card.active {
+        -webkit-backdrop-filter: blur(11px) saturate(112%) !important;
+        backdrop-filter: blur(11px) saturate(112%) !important;
+        filter: brightness(1.24) saturate(1.02) !important;
         box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28) !important;
     }
     .session-card.centered:not(.active) {
+        filter: brightness(1.3) saturate(1) !important;
         box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16) !important;
+    }
+    .session-card.active .session-card-bg {
+        /* Avoid continuous repaint from breathing animation on mobile */
+        animation: none !important;
     }
     .session-card > *:first-child {
         border-radius: 30px;
@@ -2256,6 +2270,47 @@ html[lang="en"] .records-placa-hint-es { display: none; }
     }
     .session-card > *:first-child img {
         border-radius: 30px;
+    }
+}
+
+/* iOS Safari turbo profile: prioritize scroll smoothness over heavy glass effects */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 767px) {
+        .session-card {
+            -webkit-backdrop-filter: none !important;
+            backdrop-filter: none !important;
+            background: linear-gradient(180deg,
+                rgba(40, 36, 33, 0.72) 0%,
+                rgba(46, 41, 37, 0.66) 55%,
+                rgba(55, 49, 43, 0.6) 100%) !important;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2) !important;
+            clip-path: none !important;
+            transition: transform 0.32s cubic-bezier(0.23, 1, 0.32, 1),
+                        opacity 0.32s cubic-bezier(0.23, 1, 0.32, 1) !important;
+        }
+
+        .session-card.active,
+        .session-card.centered:not(.active) {
+            -webkit-backdrop-filter: none !important;
+            backdrop-filter: none !important;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24) !important;
+        }
+
+        .session-card::before,
+        .session-card::after {
+            display: none !important;
+        }
+
+        .session-card .card-vinyl-container::after {
+            filter: none !important;
+            opacity: 0.2 !important;
+        }
+
+        .session-card.active .session-card-bg,
+        .session-card.active.playing .session-card-bg {
+            animation: none !important;
+            filter: brightness(0.68) saturate(0.9) !important;
+        }
     }
 }
 
