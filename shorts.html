@@ -921,6 +921,60 @@
             }
         }
 
+        @media (max-width: 768px) {
+            /* Мобильный: like/comment заметнее и удобнее для тапа */
+            .video-section .like-btn,
+            .comments-toggle {
+                min-width: 64px;
+                padding: 8px 13px;
+                gap: 0.45rem;
+            }
+
+            .video-section .like-btn .like-icon {
+                width: 13px;
+                height: 13px;
+            }
+
+            .video-section .like-btn .like-count,
+            .comments-toggle .comment-count {
+                font-size: 0.75rem;
+            }
+
+            .comments-toggle i,
+            .comments-toggle svg,
+            .comments-toggle .comments-icon {
+                width: 13px !important;
+                height: 13px !important;
+                min-width: 13px;
+                min-height: 13px;
+            }
+
+            /* Мобильный: назад/звук компактнее и менее навязчивые */
+            .shorts-back-btn {
+                top: 1rem !important;
+                left: 1rem !important;
+                padding: 0.5rem !important;
+            }
+
+            .shorts-back-btn i,
+            .shorts-back-btn svg {
+                width: 1.05rem !important;
+                height: 1.05rem !important;
+            }
+
+            .video-section .mute-toggle {
+                top: 1rem !important;
+                right: 1rem !important;
+                padding: 0.5rem !important;
+            }
+
+            .video-section .mute-toggle i,
+            .video-section .mute-toggle svg {
+                width: 1rem !important;
+                height: 1rem !important;
+            }
+        }
+
         /* Индикаторы загрузки и ошибки */
         .video-loading, .video-error {
             position: absolute;

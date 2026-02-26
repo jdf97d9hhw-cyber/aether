@@ -341,8 +341,10 @@ body {
 }
 
 #navbar.nav-scrolled {
-    /* Sin fondo en toda la barra; el fondo va al .navbar-inner con esquinas redondeadas abajo */
-    background: transparent !important;
+    /* Restaurar cristal también para logo + idioma al hacer scroll */
+    background: rgba(22, 18, 14, 0.72) !important;
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    backdrop-filter: blur(10px) saturate(120%);
 }
 
 /* Contenedor de los enlaces (Visión, Sesiones, etc.): fondo con esquinas redondeadas abajo cuando hay scroll */
@@ -684,12 +686,11 @@ html.styles-loaded #loading-screen {
     /* SESIONES: mantener textura cosmic también en lite-mode, pero ligera */
     html.lite-mode .sessions-plaque .sessions-plaque-bg {
         background:
-            radial-gradient(58% 52% at 50% 48%, rgba(6, 4, 3, 0.22) 0%, rgba(6, 4, 3, 0.14) 36%, rgba(6, 4, 3, 0) 72%),
-            linear-gradient(180deg, rgba(10, 7, 5, 0.62) 0%, rgba(8, 5, 4, 0.7) 100%),
+            linear-gradient(180deg, rgba(10, 7, 5, 0.56) 0%, rgba(8, 5, 4, 0.64) 100%),
             url('../img/cosmic_background.webp') center center / cover no-repeat !important;
-        background-blend-mode: normal, normal, normal !important;
-        -webkit-filter: brightness(1.01) contrast(1.02) !important;
-        filter: brightness(1.01) contrast(1.02) !important;
+        background-blend-mode: normal !important;
+        -webkit-filter: brightness(1.08) contrast(1.06) !important;
+        filter: brightness(1.08) contrast(1.06) !important;
         transform: none !important;
         box-shadow: 0 10px 32px rgba(0, 0, 0, 0.55) !important;
     }
@@ -2412,13 +2413,12 @@ html[lang="en"] .records-placa-hint-es { display: none; }
 }
 
 @media (max-width: 380px) {
-    .session-card { width: 84vw; height: 400px; }
+    .session-card { width: 75vw; height: 400px; }
     .session-card.active { height: 416px; }
     .card-vinyl-container { width: 200px; height: 200px; }
     .session-card.active .card-vinyl-container { width: 218px; height: 218px; }
 }
 @media (max-width: 767px) and (min-width: 381px) {
-    .session-card { width: min(86vw, 360px); }
     .session-card .card-vinyl-container { width: 205px; height: 205px; }
     .session-card.active .card-vinyl-container { width: 220px; height: 220px; }
 }
@@ -2759,19 +2759,18 @@ a.lang-btn:active {
     border-radius: inherit;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 1;
     /* Capas de color: profundidad + halo cálido */
     background:
-        radial-gradient(58% 52% at 50% 48%, rgba(6, 4, 3, 0.24) 0%, rgba(6, 4, 3, 0.16) 36%, rgba(6, 4, 3, 0) 72%),
-        radial-gradient(140% 120% at 50% -10%, rgba(220, 160, 90, 0.1) 0%, rgba(220, 160, 90, 0) 55%),
-        radial-gradient(120% 160% at 8% 110%, rgba(220, 140, 80, 0.14) 0%, rgba(220, 140, 80, 0) 60%),
-        radial-gradient(120% 160% at 92% 110%, rgba(255, 210, 150, 0.1) 0%, rgba(255, 210, 150, 0) 60%),
+        radial-gradient(140% 120% at 50% -10%, rgba(220, 160, 90, 0.16) 0%, rgba(220, 160, 90, 0) 55%),
+        radial-gradient(120% 160% at 8% 110%, rgba(220, 140, 80, 0.22) 0%, rgba(220, 140, 80, 0) 60%),
+        radial-gradient(120% 160% at 92% 110%, rgba(255, 210, 150, 0.14) 0%, rgba(255, 210, 150, 0) 60%),
         linear-gradient(180deg,
-            rgba(18, 13, 9, 0.58) 0%,
-            rgba(10, 7, 5, 0.64) 40%,
-            rgba(6, 4, 3, 0.7) 100%),
+            rgba(18, 13, 9, 0.9) 0%,
+            rgba(10, 7, 5, 0.92) 40%,
+            rgba(6, 4, 3, 0.94) 100%),
         url('../img/cosmic_background.webp') center center / cover no-repeat;
-    background-blend-mode: normal, normal, normal, normal, normal, normal;
+    background-blend-mode: normal, normal, normal, normal, overlay;
     -webkit-backdrop-filter: blur(18px) saturate(145%);
     backdrop-filter: blur(18px) saturate(145%);
     box-shadow:
@@ -4220,13 +4219,12 @@ body:not(.player-expanded-open) .player-collapsed-handle .player-expanded-handle
     top: 0;
     opacity: 1;
     background:
-        radial-gradient(58% 52% at 50% 48%, rgba(6, 4, 3, 0.2) 0%, rgba(6, 4, 3, 0.12) 36%, rgba(6, 4, 3, 0) 72%),
         linear-gradient(180deg,
-            rgba(24, 18, 14, 0.52) 0%,
-            rgba(16, 12, 10, 0.6) 50%,
-            rgba(13, 10, 8, 0.56) 100%),
+            rgba(24, 18, 14, 0.72) 0%,
+            rgba(16, 12, 10, 0.82) 50%,
+            rgba(13, 10, 8, 0.78) 100%),
         url('../img/cosmic_background.webp') center center / cover no-repeat;
-    background-blend-mode: normal, normal, normal;
+    background-blend-mode: normal, soft-light;
     -webkit-backdrop-filter: blur(16px) saturate(135%);
     backdrop-filter: blur(16px) saturate(135%);
     box-shadow:
@@ -5847,9 +5845,7 @@ body.records-panel-open #navbar {
 .ritual-scene {
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(120% 85% at 50% 42%, rgba(166, 122, 66, 0.05) 0%, rgba(0, 0, 0, 0) 60%),
-        linear-gradient(180deg, #020201 0%, #070605 34%, #090705 62%, #050403 100%);
+    background: linear-gradient(180deg, #030302 0%, #080605 35%, #0a0806 60%, #060504 100%);
 }
 
 .ritual-scene img.ritual-bg-img {
@@ -5858,21 +5854,21 @@ body.records-panel-open #navbar {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.28;
-    filter: brightness(0.46) saturate(1.02) contrast(1.03);
-    animation: ritual-bg-drift 24s ease-in-out infinite;
+    opacity: 0.42;
+    filter: brightness(0.6) saturate(1.15);
+    animation: ritual-bg-drift 18s ease-in-out infinite;
 }
 
 @keyframes ritual-bg-drift {
-    0%, 100% { transform: scale(1.01) translate(0, 0); }
-    33%     { transform: scale(1.022) translate(0.3%, -0.2%); }
-    66%     { transform: scale(1.016) translate(-0.2%, 0.3%); }
+    0%, 100% { transform: scale(1.02) translate(0, 0); }
+    33%     { transform: scale(1.04) translate(0.6%, -0.3%); }
+    66%     { transform: scale(1.03) translate(-0.4%, 0.5%); }
 }
 
 .ritual-scene .ritual-veil {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 72% 62% at 50% 45%, rgba(186, 136, 74, 0.07), transparent 50%);
+    background: radial-gradient(ellipse 70% 60% at 50% 45%, rgba(204, 150, 70, 0.12), transparent 45%);
     opacity: 0;
     transition: opacity 2.2s ease-out;
 }
@@ -5884,9 +5880,9 @@ body.records-panel-open #navbar {
 .ritual-scene .ritual-veil-pulse {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 62% 52% at 50% 48%, rgba(214, 168, 96, 0.04), transparent 54%);
+    background: radial-gradient(ellipse 60% 50% at 50% 48%, rgba(220, 180, 100, 0.08), transparent 50%);
     opacity: 0;
-    animation: ritual-veil-pulse 8s ease-in-out infinite;
+    animation: ritual-veil-pulse 6s ease-in-out infinite;
     animation-play-state: paused;
 }
 
@@ -5897,14 +5893,14 @@ body.records-panel-open #navbar {
 }
 
 @keyframes ritual-veil-pulse {
-    0%, 100% { opacity: 0.45; transform: scale(1); }
-    50%     { opacity: 0.7; transform: scale(1.03); }
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50%     { opacity: 1; transform: scale(1.06); }
 }
 
 .ritual-scene .ritual-noise {
     position: absolute;
     inset: 0;
-    opacity: 0.02;
+    opacity: 0.06;
     pointer-events: none;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.35 0 0 0 0 0 0.28 0 0 0 0 0 0.22 0 0 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -5921,13 +5917,13 @@ body.records-panel-open #navbar {
     width: 1.5px;
     height: 1.5px;
     border-radius: 50%;
-    background: rgba(250, 230, 206, 0.16);
-    box-shadow: 0 0 4px rgba(181, 132, 66, 0.1);
+    background: rgba(255, 235, 210, 0.28);
+    box-shadow: 0 0 4px rgba(204, 160, 80, 0.15);
     opacity: 0;
-    animation: ritual-particle-float 15s ease-in-out infinite;
+    animation: ritual-particle-float 12s ease-in-out infinite;
 }
 
-#entry-ritual.ritual-phase-reveal .ritual-particle { opacity: 0.12; }
+#entry-ritual.ritual-phase-reveal .ritual-particle { opacity: 0.28; }
 
 .ritual-particle--1 { left: 12%; top: 22%; animation-delay: 0s; animation-duration: 14s; }
 .ritual-particle--2 { left: 78%; top: 18%; animation-delay: -2s; animation-duration: 11s; }
@@ -5939,10 +5935,10 @@ body.records-panel-open #navbar {
 .ritual-particle--8 { left: 45%; top: 85%; animation-delay: -6s; animation-duration: 13s; }
 
 @keyframes ritual-particle-float {
-    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.1; }
-    25%     { transform: translate(4px, -7px) scale(1.03); opacity: 0.18; }
-    50%     { transform: translate(-3px, -4px) scale(0.98); opacity: 0.14; }
-    75%     { transform: translate(-5px, 4px) scale(1.02); opacity: 0.17; }
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
+    25%     { transform: translate(6px, -10px) scale(1.08); opacity: 0.38; }
+    50%     { transform: translate(-4px, -6px) scale(0.96); opacity: 0.28; }
+    75%     { transform: translate(-8px, 6px) scale(1.05); opacity: 0.35; }
 }
 
 /* Center content: logo + word */
@@ -5974,12 +5970,12 @@ body.records-panel-open #navbar {
 
 .ritual-logo-glow {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 142px;
+    height: 142px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(196, 146, 82, 0.11) 0%, rgba(156, 108, 52, 0.04) 42%, transparent 68%);
+    background: radial-gradient(circle, rgba(204, 160, 90, 0.14) 0%, rgba(204, 140, 70, 0.05) 40%, transparent 60%);
     opacity: 0;
-    animation: ritual-glow-breath 8s ease-in-out infinite;
+    animation: ritual-glow-breath 5.5s ease-in-out infinite;
     animation-delay: 1s;
 }
 
@@ -5988,44 +5984,44 @@ body.records-panel-open #navbar {
 }
 
 @keyframes ritual-glow-breath {
-    0%, 100% { opacity: 0.34; transform: scale(1); }
-    50%     { opacity: 0.5; transform: scale(1.02); }
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50%     { opacity: 0.9; transform: scale(1.06); }
 }
 
 .ritual-logo {
     position: relative;
     z-index: 1;
-    width: 82px;
+    width: 80px;
     height: auto;
     opacity: 0.95;
-    filter: drop-shadow(0 0 12px rgba(181, 132, 66, 0.16)) drop-shadow(0 0 4px rgba(255, 235, 210, 0.08));
-    animation: ritual-logo-breath 7s ease-in-out infinite;
+    filter: drop-shadow(0 0 24px rgba(204, 150, 70, 0.28)) drop-shadow(0 0 8px rgba(255, 235, 210, 0.15));
+    animation: ritual-logo-breath 5s ease-in-out infinite;
 }
 
 @keyframes ritual-logo-breath {
-    0%, 100% { opacity: 0.93; transform: scale(1); }
-    50%     { opacity: 0.98; transform: scale(1.01); }
+    0%, 100% { opacity: 0.92; transform: scale(1); }
+    50%     { opacity: 1; transform: scale(1.03); }
 }
 
 .ritual-word {
-    margin-top: 1.3rem;
+    margin-top: 1.4rem;
     display: inline-block;
     align-self: center;
     font-family: 'Playfair Display', serif;
-    font-size: clamp(0.8rem, 3vw, 0.98rem);
-    font-weight: 500;
-    letter-spacing: 0.42em;
+    font-size: clamp(0.8rem, 3.2vw, 1rem);
+    font-weight: 400;
+    letter-spacing: 0.45em;
     text-transform: uppercase;
-    line-height: 1.08;
-    padding-left: 0.42em;
-    margin-right: -0.42em;
-    color: rgba(255, 249, 241, 0.68);
-    text-shadow: 0 0 12px rgba(176, 128, 64, 0.18),
-                 0 0 5px rgba(255, 235, 210, 0.1),
-                 0 1px 2px rgba(0, 0, 0, 0.34);
+    line-height: 1.1;
+    padding-left: 0.45em;
+    margin-right: -0.45em;
+    color: rgba(255, 252, 248, 0.7);
+    text-shadow: 0 0 28px rgba(204, 160, 80, 0.35),
+                 0 0 12px rgba(255, 235, 210, 0.2),
+                 0 1px 2px rgba(0, 0, 0, 0.3);
     opacity: 0;
     transition: opacity 1.6s ease-out 1.1s;
-    animation: ritual-word-pulse 8s ease-in-out infinite;
+    animation: ritual-word-pulse 5s ease-in-out infinite;
     animation-delay: 2s;
 }
 
@@ -6034,8 +6030,8 @@ body.records-panel-open #navbar {
 }
 
 @keyframes ritual-word-pulse {
-    0%, 100% { opacity: 0.92; text-shadow: 0 0 12px rgba(176, 128, 64, 0.18), 0 0 5px rgba(255, 235, 210, 0.1), 0 1px 2px rgba(0, 0, 0, 0.34); }
-    50%     { opacity: 0.97; text-shadow: 0 0 16px rgba(186, 138, 72, 0.24), 0 0 7px rgba(255, 239, 220, 0.13), 0 1px 2px rgba(0, 0, 0, 0.34); }
+    0%, 100% { opacity: 1; text-shadow: 0 0 28px rgba(204, 160, 80, 0.35), 0 0 12px rgba(255, 235, 210, 0.2), 0 1px 2px rgba(0, 0, 0, 0.3); }
+    50%     { opacity: 0.95; text-shadow: 0 0 36px rgba(204, 170, 90, 0.45), 0 0 16px rgba(255, 240, 220, 0.25), 0 1px 2px rgba(0, 0, 0, 0.3); }
 }
 
 
