@@ -2411,12 +2411,13 @@ html[lang="en"] .records-placa-hint-es { display: none; }
 }
 
 @media (max-width: 380px) {
-    .session-card { width: 75vw; height: 400px; }
+    .session-card { width: 84vw; height: 400px; }
     .session-card.active { height: 416px; }
     .card-vinyl-container { width: 200px; height: 200px; }
     .session-card.active .card-vinyl-container { width: 218px; height: 218px; }
 }
 @media (max-width: 767px) and (min-width: 381px) {
+    .session-card { width: min(86vw, 360px); }
     .session-card .card-vinyl-container { width: 205px; height: 205px; }
     .session-card.active .card-vinyl-container { width: 220px; height: 220px; }
 }
