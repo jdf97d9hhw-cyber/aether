@@ -347,7 +347,7 @@ body {
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    border-radius: 24px;
+    border-radius: 30px;
     border: 1px solid rgba(255, 248, 238, 0.12);
     background: rgba(18, 14, 11, 0.28);
     -webkit-backdrop-filter: blur(8px) saturate(118%);
@@ -371,8 +371,8 @@ body {
 
 @media (max-width: 767px) {
     .navbar-shell {
-        border-radius: 18px;
-        padding: 6px 12px;
+        border-radius: 24px;
+        padding: 10px 12px;
     }
 }
 
