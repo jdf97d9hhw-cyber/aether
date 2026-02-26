@@ -925,14 +925,23 @@
             /* Мобильный: like/comment заметнее и удобнее для тапа */
             .video-section .like-btn,
             .comments-toggle {
-                min-width: 64px;
-                padding: 8px 13px;
-                gap: 0.45rem;
+                min-height: 40px;
+                min-width: 70px;
+                padding: 10px 14px;
+                gap: 0.5rem;
+            }
+
+            /* Больше расстояния между like и comentarios */
+            .comments-toggle {
+                bottom: calc(2.5rem + 2.5rem);
+            }
+            .video-section .like-btn {
+                bottom: calc(2.5rem + 6rem);
             }
 
             .video-section .like-btn .like-icon {
-                width: 13px;
-                height: 13px;
+                width: 14px;
+                height: 14px;
             }
 
             .video-section .like-btn .like-count,
@@ -943,10 +952,10 @@
             .comments-toggle i,
             .comments-toggle svg,
             .comments-toggle .comments-icon {
-                width: 13px !important;
-                height: 13px !important;
-                min-width: 13px;
-                min-height: 13px;
+                width: 14px !important;
+                height: 14px !important;
+                min-width: 14px;
+                min-height: 14px;
             }
 
             /* Мобильный: назад/звук компактнее и менее навязчивые */

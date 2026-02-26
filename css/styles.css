@@ -348,25 +348,25 @@ body {
     overflow: hidden;
     isolation: isolate;
     border-radius: 30px;
-    border: 1px solid rgba(255, 248, 238, 0.12);
-    background: rgba(18, 14, 11, 0.28);
-    -webkit-backdrop-filter: blur(8px) saturate(118%);
-    backdrop-filter: blur(8px) saturate(118%);
-    box-shadow:
-        inset 0 0 0 1px rgba(255, 248, 238, 0.02),
-        0 8px 24px rgba(0, 0, 0, 0.22);
+    border: 1px solid transparent;
+    background: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: none;
+    opacity: 1;
+    transform: none;
     padding: 8px 14px;
     transition: background 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease, backdrop-filter 0.45s ease;
 }
 
 #navbar.nav-scrolled .navbar-shell {
-    border-color: rgba(255, 240, 220, 0.18);
+    border: 0.5px solid rgba(255, 240, 220, 0.09);
     background: rgba(20, 16, 12, 0.56);
     -webkit-backdrop-filter: blur(14px) saturate(130%) !important;
     backdrop-filter: blur(14px) saturate(130%) !important;
     box-shadow:
-        inset 0 0 0 1px rgba(255, 248, 238, 0.03),
-        0 10px 30px rgba(0, 0, 0, 0.3);
+        inset 0 0 0 0.5px rgba(255, 248, 238, 0.02),
+        0 10px 28px rgba(0, 0, 0, 0.26);
 }
 
 @media (max-width: 767px) {
@@ -382,19 +382,22 @@ body {
         /* Safari puede perder backdrop-filter si el padre tiene filter/transform */
         filter: none !important;
         transform: translateY(0) !important;
+        background: transparent !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
     }
 
     #navbar.nav-scrolled {
-        background: rgba(18, 14, 11, 0.52) !important;
-        -webkit-backdrop-filter: blur(16px) saturate(138%) !important;
-        backdrop-filter: blur(16px) saturate(138%) !important;
+        background: transparent !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
     }
 
     #navbar.nav-scrolled .navbar-shell {
-        background: rgba(20, 16, 12, 0.38) !important;
-        -webkit-backdrop-filter: none !important;
-        backdrop-filter: none !important;
-        border-color: rgba(255, 240, 220, 0.2) !important;
+        background: rgba(20, 16, 12, 0.52) !important;
+        -webkit-backdrop-filter: blur(16px) saturate(138%) !important;
+        backdrop-filter: blur(16px) saturate(138%) !important;
+        border: 0.5px solid rgba(255, 240, 220, 0.1) !important;
     }
 }
 
@@ -613,6 +616,13 @@ html.styles-loaded #loading-screen {
     backdrop-filter: blur(10px) saturate(120%);
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
+}
+
+/* Navbar principal: sin blur/fondo rectangular; el efecto vive en .navbar-shell */
+#navbar.nav-scrolled {
+    background: transparent !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
 }
 
 /* =========================================
@@ -2526,12 +2536,12 @@ html[lang="en"] .records-placa-hint-es { display: none; }
 @media (max-width: 380px) {
     .session-card { width: 75vw; height: 400px; }
     .session-card.active { height: 416px; }
-    .card-vinyl-container { width: 200px; height: 200px; }
-    .session-card.active .card-vinyl-container { width: 218px; height: 218px; }
+    .card-vinyl-container { width: 210px; height: 210px; }
+    .session-card.active .card-vinyl-container { width: 228px; height: 228px; }
 }
 @media (max-width: 767px) and (min-width: 381px) {
-    .session-card .card-vinyl-container { width: 205px; height: 205px; }
-    .session-card.active .card-vinyl-container { width: 220px; height: 220px; }
+    .session-card .card-vinyl-container { width: 218px; height: 218px; }
+    .session-card.active .card-vinyl-container { width: 234px; height: 234px; }
 }
 
 @media (min-width: 768px) {
@@ -7816,23 +7826,51 @@ body.ritual-vu-open {
 }
 
 @media (max-width: 767px) {
-    /* NAV móvil: botones de idioma +10% */
+    /* NAV móvil: controles cómodos para dedo (tap target ~40-44px) */
     .lang-switch {
         font-size: 11px;
+        gap: 6px;
     }
     .lang-switch .lang-btn {
-        padding: calc(3px * 1.1) calc(8px * 1.1);
-        min-width: calc(28px * 1.1);
+        min-height: 40px;
+        min-width: 40px;
+        padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.006);
+        border-color: rgba(255, 255, 255, 0.02);
+        color: rgba(255, 255, 255, 0.2);
+    }
+    .lang-switch .lang-btn--active {
+        background: rgba(255, 255, 255, 0.012);
+        border-color: rgba(255, 255, 255, 0.035);
+        color: rgba(255, 255, 255, 0.32);
     }
 
-    /* NAV móvil: botón VU-metro +10% */
+    /* NAV móvil: botón VU-metro con área de toque amplia */
     .ritual-vu-nav-btn--mobile {
-        width: calc(26px * 1.1);
-        height: calc(26px * 1.1);
+        width: 40px;
+        height: 40px;
+        opacity: 0.4;
+        color: rgba(255, 255, 255, 0.33);
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.015), 0 0 4px rgba(255, 255, 255, 0.012);
+        background: radial-gradient(circle at 40% 35%, rgba(255, 255, 255, 0.012), rgba(12, 10, 8, 0.18) 72%);
     }
     .ritual-vu-nav-btn--mobile svg {
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
+    }
+
+    /* FABs móvil: tamaño cómodo para dedo (como controles de idioma) */
+    #floating-whatsapp,
+    #btnSubir {
+        width: 44px;
+        height: 44px;
+        right: 16px;
+    }
+    #floating-whatsapp i,
+    #btnSubir svg {
+        width: 18px;
+        height: 18px;
     }
 
     .ritual-vu-stage {

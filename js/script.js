@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateNavScrollEffect(scrollY) {
         if (!navbar) return;
-        var threshold = 30;
+        var threshold = 8;
         if (scrollY > threshold && !navActive) {
             navbar.classList.add('nav-scrolled');
             navActive = true;
@@ -310,8 +310,13 @@ document.addEventListener('DOMContentLoaded', function () {
     updateNavbarHeightVar();
     updateNavScrollEffect(getScrollY());
     window.addEventListener('resize', updateNavbarHeightVar);
-    // Un solo listener en window; el scroll real ocurre en el viewport. Evita trabajo duplicado.
-    window.addEventListener('scroll', onScrollUnified, { passive: true });
+    // iOS/Safari: el scroll real puede vivir en body/documentElement y no siempre en window.
+    // Escuchamos varias superficies para mantener estable nav-scrolled + callbacks globales.
+    const scrollListenerOpts = { passive: true };
+    window.addEventListener('scroll', onScrollUnified, scrollListenerOpts);
+    document.addEventListener('scroll', onScrollUnified, scrollListenerOpts);
+    if (document.body) document.body.addEventListener('scroll', onScrollUnified, scrollListenerOpts);
+    if (document.documentElement) document.documentElement.addEventListener('scroll', onScrollUnified, scrollListenerOpts);
     setTimeout(function () { updateNavScrollEffect(getScrollY()); }, 100);
 
     // Click suave en el logo DJ Aether para volver al top
@@ -3069,7 +3074,7 @@ function updateHeaderShrink() {
     const headerWrapper = document.querySelector('.home-header-wrapper');
     if (!headerSection || !headerWrapper) return;
     var top = headerSection.getBoundingClientRect().top;
-    var on = top < -80; /* header ha subido más de 80px → modo tarjeta */
+    var on = top < -40; /* activar antes para que el efecto lateral entre más pronto */
     headerSection.classList.toggle('header-shrink', on);
     headerWrapper.classList.toggle('header-scrolled', on);
 }
