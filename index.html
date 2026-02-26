@@ -4,11 +4,60 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-    <!-- Vista desktop desbloqueada: se muestra el sitio completo en PC -->
     <style>
         html, body { background: #000 !important; margin: 0; min-height: 100vh; }
         #entry-ritual { position: fixed; inset: 0; z-index: 9999; background: #000 !important; min-height: 100vh; }
+        #desktop-blocker {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 10050;
+            background: radial-gradient(circle at 50% 20%, rgba(204, 136, 0, 0.12), transparent 52%), #050505;
+            color: rgba(255, 255, 255, 0.88);
+            padding: 24px;
+            text-align: center;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            align-items: center;
+            justify-content: center;
+        }
+        #desktop-blocker-inner { max-width: 460px; }
+        #desktop-blocker-logo {
+            width: 72px;
+            height: 72px;
+            object-fit: contain;
+            margin: 0 auto 18px;
+            opacity: 0.95;
+        }
+        #desktop-blocker h1 {
+            margin: 0 0 12px;
+            font-size: 20px;
+            line-height: 1.3;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        #desktop-blocker p {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.7;
+            letter-spacing: 0.04em;
+            color: rgba(255, 255, 255, 0.65);
+        }
+        html.is-desktop-blocked body > *:not(#desktop-blocker) { display: none !important; }
+        html.is-desktop-blocked #desktop-blocker { display: flex; }
     </style>
+    <script>
+        (function () {
+            function isDesktopViewport() {
+                return window.matchMedia('(min-width: 1024px) and (hover: hover) and (pointer: fine)').matches;
+            }
+            function syncDesktopGate() {
+                document.documentElement.classList.toggle('is-desktop-blocked', isDesktopViewport());
+            }
+            syncDesktopGate();
+            window.addEventListener('resize', syncDesktopGate, { passive: true });
+        })();
+    </script>
 
     <title>Aether | DJ Deep, Soulful House en Barcelona para Bares y Clubs</title>
 
@@ -124,6 +173,16 @@
 </head>
 
 <body class="bg-[#050505] text-brand-text antialiased overflow-x-hidden">
+    <div id="desktop-blocker" role="dialog" aria-modal="true" aria-label="Disponible solo en móvil">
+        <div id="desktop-blocker-inner">
+            <img id="desktop-blocker-logo" src="img/logo.png" alt="Aether">
+            <h1>Disponible solo en móvil</h1>
+            <p>
+                Esta experiencia está optimizada para smartphone.
+                Abre la web desde tu teléfono para acceder al sitio completo.
+            </p>
+        </div>
+    </div>
     <!-- Entry ritual — liminal transition (QR / first visit) -->
     <div id="entry-ritual" role="presentation" aria-live="polite">
         <div class="ritual-aperture">

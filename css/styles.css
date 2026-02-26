@@ -1774,11 +1774,12 @@ body:has(#bottom-player #play-btn svg polygon[points="6 4 14 4 14 16 6 16"]).has
 }
 
 .records-disc-caption p:first-child {
-    color: rgba(255, 235, 210, 0.19);
+    color: rgba(255, 232, 198, 0.86);
+    text-shadow: 0 1px 10px rgba(204, 136, 0, 0.2);
 }
 
 .records-disc-caption p:last-child {
-    color: rgba(255, 255, 255, 0.72);
+    color: rgba(255, 247, 235, 0.9);
 }
 
 @media (min-width: 768px) {
@@ -1818,17 +1819,21 @@ body:has(#bottom-player #play-btn svg polygon[points="6 4 14 4 14 16 6 16"]).has
 /* Contenedor disco: borde muy sutil, sombra suave */
 .records-carousel .disco-item-pc > div {
     border-radius: 30px !important;
-    border-color: rgba(255, 255, 255, 0.06) !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border-color: rgba(255, 230, 188, 0.22) !important;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(204, 136, 0, 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 /* Hover sutil: ligero scale, anillo discreto */
 .records-carousel .disco-item-pc:has(.record-overlay):hover > div {
-    transform: scale(1.02);
+    transform: translateY(-2px) scale(1.03);
     box-shadow:
-        0 12px 32px rgba(0, 0, 0, 0.3),
-        0 0 0 1px rgba(255, 255, 255, 0.08);
+        0 16px 38px rgba(0, 0, 0, 0.34),
+        0 0 26px rgba(204, 136, 0, 0.22),
+        0 0 0 1px rgba(255, 226, 178, 0.42);
+    border-color: rgba(255, 226, 178, 0.42) !important;
 }
 
 /* "Gira" / "Spin" — más pequeño y etéreo, casi ritual, tono vinilo */
@@ -1838,7 +1843,7 @@ body:has(#bottom-player #play-btn svg polygon[points="6 4 14 4 14 16 6 16"]).has
     font-weight: 400;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: rgba(180, 155, 115, 0.52);
+    color: rgba(232, 198, 142, 0.74);
     margin: 0 0 0.5rem 0;
     padding: 0;
 }
@@ -3052,12 +3057,13 @@ a.lang-btn:active {
     cursor: pointer;
     transition: background 0.28s ease, box-shadow 0.28s ease, border-color 0.22s ease;
     background: linear-gradient(135deg,
-        rgba(255, 252, 248, 0.12) 0%,
-        rgba(255, 248, 238, 0.08) 50%,
-        rgba(255, 245, 235, 0.06) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+        rgba(255, 244, 224, 0.18) 0%,
+        rgba(255, 220, 170, 0.11) 48%,
+        rgba(204, 136, 0, 0.09) 100%);
+    border: 1px solid rgba(255, 226, 178, 0.24);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(204, 136, 0, 0.08),
+                inset 0 1px 0 0 rgba(255, 242, 214, 0.14);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     position: relative;
@@ -3078,10 +3084,10 @@ a.lang-btn:active {
 /* Miniatura de portada en la lista de sesiones */
 .sessions-list-item-thumb {
     flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
     border-radius: 10px;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.06);
@@ -3095,10 +3101,10 @@ a.lang-btn:active {
 }
 @media (min-width: 768px) {
     .sessions-list-item-thumb {
-        width: 48px;
-        height: 48px;
-        min-width: 48px;
-        min-height: 48px;
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+        min-height: 56px;
         border-radius: 12px;
     }
 }
@@ -3159,12 +3165,13 @@ a.lang-btn:active {
 @media (hover: hover) {
     .sessions-list-item:hover {
         background: linear-gradient(135deg,
-            rgba(255, 252, 248, 0.16) 0%,
-            rgba(255, 248, 238, 0.11) 50%,
-            rgba(255, 245, 235, 0.08) 100%);
-        border-color: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22),
-                    inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+            rgba(255, 246, 228, 0.22) 0%,
+            rgba(255, 225, 180, 0.15) 50%,
+            rgba(204, 136, 0, 0.12) 100%);
+        border-color: rgba(255, 226, 178, 0.34);
+        box-shadow: 0 8px 26px rgba(0, 0, 0, 0.24),
+                    0 0 18px rgba(204, 136, 0, 0.16),
+                    inset 0 1px 0 0 rgba(255, 244, 222, 0.2);
     }
     .sessions-list-item:hover::before {
         opacity: 1;
@@ -3173,11 +3180,12 @@ a.lang-btn:active {
 
 .sessions-list-item.active {
     background: linear-gradient(135deg,
-        rgba(204, 136, 0, 0.14) 0%,
-        rgba(204, 136, 0, 0.06) 100%);
-    border-color: rgba(204, 136, 0, 0.28);
-    box-shadow: 0 6px 28px rgba(204, 136, 0, 0.18),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+        rgba(255, 190, 95, 0.24) 0%,
+        rgba(204, 136, 0, 0.15) 100%);
+    border-color: rgba(255, 208, 142, 0.45);
+    box-shadow: 0 8px 30px rgba(204, 136, 0, 0.26),
+                0 0 24px rgba(204, 136, 0, 0.2),
+                inset 0 1px 0 0 rgba(255, 246, 227, 0.2);
 }
 
 .sessions-list-item.active::before {
@@ -3200,7 +3208,7 @@ a.lang-btn:active {
     font-family: 'Playfair Display', serif;
     font-size: 14px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.97);
+    color: rgba(255, 248, 234, 0.98);
     line-height: 1.35;
     margin-bottom: 4px;
     white-space: nowrap;
@@ -3213,7 +3221,7 @@ a.lang-btn:active {
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: rgba(233, 230, 227, 0.58);
+    color: rgba(244, 221, 190, 0.72);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -3339,13 +3347,15 @@ a.lang-btn:active {
     z-index: 0;
     pointer-events: none;
     background: linear-gradient(180deg,
-        rgba(28, 22, 16, 0.42) 0%,
-        rgba(20, 16, 12, 0.58) 50%,
-        rgba(22, 18, 14, 0.5) 100%);
+        rgba(34, 26, 18, 0.55) 0%,
+        rgba(24, 18, 12, 0.7) 52%,
+        rgba(26, 20, 14, 0.62) 100%);
     -webkit-filter: none;
     filter: none;
     transform: none;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    box-shadow:
+        0 12px 36px rgba(0, 0, 0, 0.42),
+        0 0 0 1px rgba(255, 225, 180, 0.08) inset;
 }
 #records .records-plaque-bg::before,
 #records .records-plaque-bg::after {
@@ -3368,9 +3378,9 @@ a.lang-btn:active {
     padding: 1px;
     pointer-events: none;
     background: linear-gradient(180deg,
-        rgba(255, 248, 238, 0.1) 0%,
-        rgba(255, 235, 215, 0.06) 40%,
-        rgba(204, 136, 0, 0.14) 100%);
+        rgba(255, 246, 232, 0.16) 0%,
+        rgba(255, 230, 195, 0.12) 42%,
+        rgba(204, 136, 0, 0.24) 100%);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
