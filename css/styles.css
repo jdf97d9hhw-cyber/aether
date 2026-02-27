@@ -2746,6 +2746,12 @@ html[lang="en"] .records-placa-hint-es { display: none; }
     transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
+.lang-separator {
+    margin: 0 4px;
+    color: rgba(255, 255, 255, 0.34);
+    font-weight: 400;
+}
+
 /* Separador ES / EN (solo между двумя языками, не перед VU-кнопкой) */
 .lang-switch .lang-btn + .lang-btn::before {
     content: "/";
@@ -5883,7 +5889,8 @@ body.records-panel-open #navbar {
     right: 0;
     top: calc(var(--navbar-height, 56px) - 14px);
     z-index: 55;
-    pointer-events: none;
+    /* Permitir clic desde el primer tap también en móvil */
+    pointer-events: auto;
     padding-top: 6px;
     padding-bottom: 4px;
     background: transparent;
@@ -6301,9 +6308,6 @@ body.records-panel-open #navbar {
 @media (max-width: 1023px) {
     .section-index {
         display: block;
-    }
-    #navbar.nav-scrolled ~ #section-index .section-index__track {
-        pointer-events: auto;
     }
 }
 
