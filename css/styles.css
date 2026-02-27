@@ -372,7 +372,7 @@ body {
 @media (max-width: 767px) {
     .navbar-shell {
         border-radius: 24px;
-        padding: 10px 12px;
+        padding: 0px 12px;
     }
 }
 
@@ -7499,8 +7499,8 @@ body {
    RITUAL VU (immersive microphone mode)
    ========================================== */
 .ritual-vu-nav-btn {
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -7860,7 +7860,7 @@ body.ritual-vu-open {
     }
     /* Mantener distancia cómoda solo con el VU */
     .lang-switch .ritual-vu-nav-btn--mobile {
-        margin-left: 8px;
+        margin-left: 7px;
     }
     .lang-switch .lang-btn--active {
         background: transparent;
@@ -7870,8 +7870,8 @@ body.ritual-vu-open {
 
     /* NAV móvil: botón VU-metro con área de toque amplia */
     .ritual-vu-nav-btn--mobile {
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         opacity: 0.4;
         color: rgba(255, 255, 255, 0.33);
         border-color: rgba(255, 255, 255, 0.1);
@@ -7899,7 +7899,7 @@ body.ritual-vu-open {
     /* Subir también la fila de links pequeños (section-index) */
     .section-index {
         top: calc(var(--navbar-height, 56px) - 8px);
-        padding-top: 2px;
+        padding-top: 6px;
     }
 
     .ritual-vu-stage {
