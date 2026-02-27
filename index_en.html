@@ -381,6 +381,10 @@
 
             <img src="img/1.webp" class="w-full h-full object-cover opacity-55 transition-transform duration-1000" loading="eager" fetchpriority="high" decoding="async" alt="" style="filter: brightness(0.9) contrast(1.1);" />
         </picture>
+
+        <!-- Blur degradado con backdrop-filter: mitad superior, abajo nítido -->
+        <div class="hero-bg-blur-top absolute inset-0 z-[1] pointer-events-none" aria-hidden="true"></div>
+
         <!-- Efecto cristal sobre la imagen del hero (como placas de secciones) -->
         <div class="header-hero-glass absolute inset-0 z-[5] pointer-events-none" aria-hidden="true"></div>
     </div>
@@ -1147,13 +1151,12 @@
                 <!-- Direct message (primary) -->
                 <a href="https://wa.me/34631244350?text=Hi%20Aether%2C%20I%27d%20like%20to%20check%20availability%20for%20a%20session.%20Can%20we%20chat%3F"
                     target="_blank" rel="noopener noreferrer" class="contact-cta-btn contact-cta-btn-primary inline-flex flex-col items-center justify-center gap-3
-                        text-white transition-all duration-300
-                        border border-white/20 hover:border-white/30
-                        bg-white/15 hover:bg-white/20
-                        backdrop-blur-md px-6 py-4 rounded-3xl
-                        touch-target font-medium shadow-lg
-                        hover:shadow-[0_0_30px_rgba(230,160,32,0.5)]
-                        active:scale-95">
+        text-white transition-all duration-300
+        border border-white/20
+        bg-white/15
+        backdrop-blur-md px-6 py-4 rounded-3xl
+        touch-target font-medium shadow-lg
+        active:scale-95">
     
                     <i data-lucide="message-circle" class="w-6 h-6 md:w-7 md:h-7"></i>
                     <span class="text-sm md:text-base text-center">
@@ -1163,13 +1166,12 @@
     
                 <!-- Email (secondary) -->
                 <a href="mailto:Aether.oficial@gmail.com?subject=Booking%20Request&body=Hi%20Aether%2C%20I%27d%20like%20to%20check%20availability%20for%20a%20session.%20Can%20we%20chat%3F" class="contact-cta-btn inline-flex flex-col items-center justify-center gap-3
-                        text-white transition-all duration-300
-                        border border-white/20 hover:border-white/30
-                        bg-white/10 hover:bg-white/15
-                        backdrop-blur-md px-6 py-4 rounded-3xl
-                        touch-target font-medium shadow-lg
-                        hover:shadow-[0_0_30px_rgba(230,160,32,0.5)]
-                        active:scale-95">
+        text-white transition-all duration-300
+        border border-white/20
+        bg-white/10
+        backdrop-blur-md px-6 py-4 rounded-3xl
+        touch-target font-medium shadow-lg
+        active:scale-95">
     
                     <i data-lucide="mail" class="w-6 h-6 md:w-7 md:h-7"></i>
                     <span class="text-sm md:text-base text-center">

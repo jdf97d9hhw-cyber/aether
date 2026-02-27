@@ -355,7 +355,7 @@ body {
     box-shadow: none;
     opacity: 1;
     transform: none;
-    padding: 8px 14px;
+    padding: 10px 14px;
     transition: background 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease, backdrop-filter 0.45s ease;
 }
 
@@ -371,8 +371,8 @@ body {
 
 @media (max-width: 767px) {
     .navbar-shell {
-        border-radius: 24px;
-        padding: 4px 12px;
+        border-radius: 20px;
+        padding: 6px 12px;
     }
 }
 
@@ -1136,6 +1136,7 @@ nav#navbar a .text-glow-hover {
     .music-links {
         margin-top: 2rem !important;
         margin-bottom: 2rem !important;
+        opacity: 0.6;
     }
     #playlist-container {
         padding-top: 6px !important;
@@ -1450,23 +1451,6 @@ body.has-footer-visible #bottom-player.player-awake {
     background-color: rgba(255, 255, 255, 0.17) !important;
     box-shadow: 0 0 24px rgba(230, 160, 32, 0.12);
 }
-#contact .contact-cta-btn-primary:hover {
-    background-color: rgba(255, 255, 255, 0.24) !important;
-    box-shadow: 0 0 32px rgba(230, 160, 32, 0.18);
-}
-
-/* Contacto visible: hover solo con bordes/sombra/fondo, sin transform */
-body.has-footer-visible #contact .contact-cta-btn:hover {
-    border-color: rgba(255, 255, 255, 0.5) !important;
-    background-color: rgba(255, 255, 255, 0.25) !important;
-    box-shadow: 0 0 40px rgba(230, 160, 32, 0.6),
-                0 0 80px rgba(204, 136, 0, 0.3) !important;
-    transform: none !important;
-}
-/* Hablemos mantiene un pelín más de luz que Correo también en hover */
-body.has-footer-visible #contact .contact-cta-btn-primary:hover {
-    background-color: rgba(255, 255, 255, 0.28) !important;
-}
 
 
 /* --- LOADING SCREEN STYLES --- */
@@ -1761,6 +1745,13 @@ body:has(#bottom-player #play-btn svg polygon[points="6 4 14 4 14 16 6 16"]).has
 #ambient-bg img {
     filter: brightness(0.95) saturate(1.1) !important;
     opacity: 0.65 !important;
+    filter: blur(4px) !important;
+    -webkit-filter: blur(4px) !important;
+    -moz-filter: blur(4px) !important;
+    -ms-filter: blur(4px) !important;
+    -o-filter: blur(4px) !important;
+    filter: blur(4px) !important;
+    filter: blur(4px) !important;
 }
 #ambient-bg .bg-contrast-warm {
     background: linear-gradient(to bottom,
@@ -3068,12 +3059,12 @@ a.lang-btn:active {
 .sessions-list {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 12px;
     min-height: 320px;
     max-height: 380px;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 20px;
+    padding: 25px;
     margin: 0 -2px 0 0;
     -webkit-overflow-scrolling: touch;
 }
@@ -3148,7 +3139,7 @@ a.lang-btn:active {
 .para-ti-list {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 12px;
 }
 @media (min-width: 768px) {
     .para-ti-list {
@@ -3158,14 +3149,20 @@ a.lang-btn:active {
 /* Ítems recomendados: aspecto premium con borde dorado, placas visibles */
 .para-ti-wrap .sessions-list-item {
     margin: 0;
-    border: 1px solid rgba(204, 136, 0, 0.32);
-    background: linear-gradient(135deg,
-        rgba(255, 252, 248, 0.14) 0%,
-        rgba(255, 248, 238, 0.1) 40%,
-        rgba(204, 160, 80, 0.06) 100%);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15),
-                0 0 0 1px rgba(204, 136, 0, 0.08),
-                inset 0 1px 0 0 rgba(255, 235, 200, 0.1);
+   border: 1px solid rgba(212, 155, 60, 0.35);
+
+background: linear-gradient(135deg,
+    rgba(255, 250, 240, 0.18) 0%,
+    rgba(255, 240, 215, 0.12) 35%,
+    rgba(212, 155, 60, 0.08) 70%,
+    rgba(120, 80, 20, 0.05) 100%);
+
+box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.25),              /* profundidad real */
+    0 0 0 1px rgba(255, 200, 120, 0.12),         /* halo dorado */
+    0 0 40px rgba(212, 155, 60, 0.12),           /* glow ambiental */
+    inset 0 1px 0 rgba(255, 240, 210, 0.25),     /* luz superior */
+    inset 0 -1px 0 rgba(120, 80, 20, 0.15);      /* sombra interior sutil */
 }
 @media (hover: hover) {
     .para-ti-wrap .sessions-list-item:hover {
@@ -3184,7 +3181,7 @@ a.lang-btn:active {
     align-items: center;
     gap: 10px;
     padding: 14px 12px;
-    border-radius: 16px;
+    border-radius: 20px;
     cursor: pointer;
     transition: background 0.28s ease, box-shadow 0.28s ease, border-color 0.22s ease;
     background: linear-gradient(135deg,
@@ -4572,7 +4569,7 @@ body:not(.player-expanded-open) .player-collapsed-handle .player-expanded-handle
     }
     @container playlist-panel-mobile (max-height: 360px) {
         .player-expanded-overlay .session-card {
-            width: min(205px, 78vw) !important;
+            width: min(195px, 78vw) !important;
             height: min(320px, 100%) !important;
         }
         .player-expanded-overlay .session-card .session-card-listen-btn-text {
@@ -5187,14 +5184,7 @@ body.contact-panel-open #navbar {
     background-color: rgba(255, 255, 255, 0.17) !important;
     box-shadow: 0 0 24px rgba(230, 160, 32, 0.12);
 }
-.contact-expanded-overlay .contact-cta-btn-primary:hover {
-    background-color: rgba(255, 255, 255, 0.28) !important;
-    box-shadow: 0 0 32px rgba(230, 160, 32, 0.18);
-}
-.contact-expanded-overlay .contact-cta-btn:hover {
-    border-color: rgba(255, 255, 255, 0.5) !important;
-    background-color: rgba(255, 255, 255, 0.25) !important;
-}
+
 
 /* ========================================== */
 /* PANEL DE SELECCIÓN (RECORDS) — igual que sesiones */
