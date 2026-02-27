@@ -4572,7 +4572,7 @@ body:not(.player-expanded-open) .player-collapsed-handle .player-expanded-handle
     }
     @container playlist-panel-mobile (max-height: 360px) {
         .player-expanded-overlay .session-card {
-            width: min(195px, 78vw) !important;
+            width: min(205px, 78vw) !important;
             height: min(320px, 100%) !important;
         }
         .player-expanded-overlay .session-card .session-card-listen-btn-text {
