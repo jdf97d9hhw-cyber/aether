@@ -369,6 +369,8 @@ body {
         0 10px 28px rgba(0, 0, 0, 0.26);
 }
 
+
+
 @media (max-width: 767px) {
     .navbar-shell {
         border-radius: 20px;
