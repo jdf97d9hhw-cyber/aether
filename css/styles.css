@@ -372,7 +372,7 @@ body {
 @media (max-width: 767px) {
     .navbar-shell {
         border-radius: 24px;
-        padding: 0px 12px;
+        padding: 4px 12px;
     }
 }
 
@@ -1809,7 +1809,7 @@ body:has(#bottom-player #play-btn svg polygon[points="6 4 14 4 14 16 6 16"]).has
     -ms-overflow-style: none;
     scrollbar-width: none;
     scroll-snap-type: x mandatory;
-    padding-top: 1rem;
+    padding-top: 2rem;
     padding-bottom: 1.5rem;
 }
 
@@ -7019,7 +7019,8 @@ html:not(.styles-loaded) #cookie-banner {
      display: flex;
      align-items: center;
      gap: 8px;
-     padding: 8px 20px;
+     margin-top: 10px;
+     padding: 0.7rem 1.25rem;
      border-radius: 50px;
      border: 1px solid rgba(255, 255, 255, 0.2);
      background: transparent;
@@ -7286,7 +7287,7 @@ html:not(.styles-loaded) #cookie-banner {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem 1.25rem;
+    padding: 0.7rem 1.25rem;
     margin-top: 0.5rem;
     font-size: 0.625rem;
     font-weight: 600;
