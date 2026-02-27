@@ -1,0 +1,111 @@
+# Aether - Apache Configuration
+# Coloca este archivo en la raíz del servidor
+
+# ==========================================
+# 1. COMPRESSION & CACHING
+# ==========================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+  AddOutputFilterByType DEFLATE font/ttf font/otf font/eot font/woff font/woff2
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Imágenes
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  
+  # CSS & JS
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  
+  # Fuentes
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  
+  # HTML
+  ExpiresByType text/html "access plus 1 week"
+  
+  # Archivos de audio
+  ExpiresByType audio/mp4 "access plus 1 month"
+  ExpiresByType audio/mpeg "access plus 1 month"
+</IfModule>
+
+# ==========================================
+# 2. SECURITY HEADERS
+# ==========================================
+<IfModule mod_headers.c>
+  # Prevenir MIME type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+  
+  # Clickjacking protection
+  Header always set X-Frame-Options "SAMEORIGIN"
+  
+  # XSS Protection
+  Header always set X-XSS-Protection "1; mode=block"
+  
+  # HTTPS enforcement (descomentar si tienes HTTPS)
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  
+  # Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Permissions Policy
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# ==========================================
+# 3. REWRITE RULES (PWA Support)
+# ==========================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # No reescribir archivos/directorios existentes
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+  # Service Worker (archivo en js/sw.js)
+  RewriteRule ^sw\.js$ js/sw.js [L]
+  
+  # Reescribir todas las solicitudes a index.html (para SPA)
+  RewriteRule ^(.*)$ index.html [L]
+</IfModule>
+
+# ==========================================
+# 4. CHARSET & ENCODING
+# ==========================================
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .json .xml .svg
+
+# ==========================================
+# 5. BROWSER CACHE CONTROL
+# ==========================================
+<FilesMatch "\.(html|htm)$">
+  Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+
+<FilesMatch "\.(jpg|jpeg|png|gif|ico|css|js|svg|woff|woff2|ttf|otf|eot)$">
+  Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+
+<FilesMatch "\.(mp3|m4a|mp4|webm)$">
+  Header set Cache-Control "max-age=1209600, public"
+  # Habilitar carga progresiva para videos
+  Header set Accept-Ranges "bytes"
+</FilesMatch>
+
+# Optimización específica para videos cortos
+<FilesMatch "\.(mp4|webm)$">
+  # Habilitar compresión para videos (si el servidor lo soporta)
+  Header set Content-Encoding "identity"
+  # Permitir range requests para carga progresiva
+  Header set Accept-Ranges "bytes"
+</FilesMatch>

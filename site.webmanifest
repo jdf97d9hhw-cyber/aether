@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "Aether",
+  "short_name": "Aether",
+  "description": "DJ Aether — Deep, Soulful House desde Barcelona. Sesiones, música y vinilos.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "img/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "img/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
